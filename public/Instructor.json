@@ -1,0 +1,32 @@
+[
+  {
+    "instructorName": "Amelia Bennett",
+    "instructorEmail": "amelia.bennett01@gmail.com",
+    "instructorDetails": "Amelia is a marine biologist with a passion for preserving oceanic ecosystems. She has dark curly hair, a contagious laugh, and an ever-present notebook filled with her observations and sketches of marine life. She recently started a YouTube channel where she educates people about the mysteries of the deep sea.",
+    "instructorImage":"https://i.ibb.co/jfbsBfH/pngwing-com-1.png"
+  },
+  {
+    "instructorName": "Raj Gupta",
+    "instructorEmail": "rajgupta.05@gmail.com",
+    "instructorDetails": "Raj is a software engineer who hails from Bangalore, India. He is tall, has a neatly trimmed beard, and wears glasses. He's known for his knack for problem-solving. Raj is a chess enthusiast and often participates in local tournaments. On weekends, he teaches coding to kids in his community.",
+    "instructorImage":"https://i.ibb.co/s1rCqSN/pngwing-com.png"
+  },
+  {
+    "instructorName": "Sophia Rodriguez",
+    "instructorEmail": "sophiarodriguez01@gmail.com",
+    "instructorDetails": " Sophia is a dance instructor and owns a studio in Miami. She has a slender build, long straight brown hair, and is always seen wearing vibrant colors. She specializes in Latin dance forms. Sophia is also involved in charity work, offering free dance classes to underprivileged kids.",
+    "instructorImage":"https://i.ibb.co/K21ZFQg/man-png-30098.png"
+  },
+  {
+    "instructorName": "Daniel Adebayo",
+    "instructorEmail": "danieal05@gmail.com",
+    "instructorDetails": "Daniel is a journalist from Lagos, Nigeria. He is bald, with a deep voice and a magnetic presence. He has been covering stories related to political unrest and environmental issues in West Africa. He's won several awards for his fearless reporting and in-depth analysis.",
+    "instructorImage":"https://i.ibb.co/YhSkbk3/22654-6-man.png"
+  },
+  {
+    "instructorName": "AElena Ivanova",
+    "instructorEmail": "invanovaaelena01@gmail.com",
+    "instructorDetails": "Elena is a renowned historian from Moscow, Russia. She has short gray hair, piercing blue eyes, and an aura of wisdom about her. She's written multiple books about Russian folklore and its influence on modern culture. Elena often hosts workshops for students interested in history.",
+    "instructorImage":"https://i.ibb.co/ypqZXx2/bohemian-man-with-his-arms-crossed.jpg"
+  }
+]

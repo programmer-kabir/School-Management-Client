@@ -1,0 +1,222 @@
+[
+  {
+    "courseName": "Introduction to Computer Science (CS50)",
+    "courseDetails": "Harvard University's CS50 is more than just a course on computer science; it's an exhilarating introduction to problem-solving, computational thinking, and innovative technology. Rooted in the heart of Cambridge, Massachusetts, but available globally through platforms like edX, this course has been foundational for countless budding programmers, irrespective of their backgrounds.Led by the charismatic Professor David J. Malan, CS50 dives deep into the very essence of computer science. It starts with the very basics, demystifying topics like algorithms, data structures, and encapsulation. As the course progresses, students engage with multiple programming languages including C, Python, and SQL. However, it's not just the languages but the application that stands out. From building games to intricate web applications, CS50 ensures that learning is hands-on. One of the distinguishing features of this course is its commitment to fostering a robust community. Whether you're a Harvard undergraduate or an online learner from halfway across the world, the course provides ample opportunities for interaction, peer learning, and collaboration. Through platforms like CS50's dedicated subreddit or its Discord server, students can ask questions, share projects, and even collaborate on real-world applications. Moreover, CS50 offers a plethora of resources: succinct lecture notes, problem sets that challenge the intellect, shorts by the dedicated teaching team, and walkthroughs that guide the thought process. The course culminates with a final project where students are free to design and implement something of their choice, encapsulating all that they've learned. In essence, CS50 is not just a course; it's a journey—one that transforms an absolute beginner into a confident programmer, ready to take on the challenges of the digital world.",
+    "price": 150,
+    "instructorEmail": "amelia.bennett01@gmail.com",
+    "courseImage": "https://i.ibb.co/YD6N10X/Computer-Science-CS50.jpg",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "JavaScript: Understanding the Weird Parts",
+    "courseDetails": "ASP.NET Core is Microsoft's cutting-edge framework designed for building modern, cloud-based web applications. It merges the power of .NET with the flexibility of open-source, offering a platform that caters to both novices and experts. Unlike its predecessor, ASP.NET, the Core variant runs on Windows, macOS, and Linux. Optimized for performance, it has a modular architecture, allowing developers to include only necessary libraries, thus ensuring lightweight applications. For newcomers, it offers a simplified web development experience with its Razor Pages. The MVC (Model-View-Controller) architecture remains fundamental, facilitating a separation of concerns. Entity Framework Core enables seamless database operations. Middleware components help customize the request-response pipeline. Advanced routing, data validation, and user authentication mechanisms allow for the creation of more complex applications. An integral part of ASP.NET Core is its support for Dependency Injection, promoting better code design and testability. The framework isn't just for websites. Experts can delve into SignalR for real-time communications, or craft robust APIs. Security, always crucial, sees enhancements with advanced authentication and authorization methods.  Being cloud-ready, it integrates seamlessly with platforms like Azure. The open-source nature means a vibrant community and a plethora of third-party tools. In conclusion, ASP.NET Core is an evolving powerhouse, suitable for anyone from web development beginners to seasoned experts.",
+    "price": 170,
+    "instructorEmail": "rajgupta.05@gmail.com",
+    "courseImage": "https://i.ibb.co/YWYh8yd/javascript.png",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "The Complete Web Developer Course 2.0",
+    "courseDetails": "This course doesn’t just teach one language or platform. It aims to provide a well-rounded education in web development. From HTML5 and CSS3 for structuring and styling web pages to JavaScript and jQuery for adding interactivity, the basics are thoroughly covered. Advanced modules introduce powerful tools and platforms such as PHP for server-side scripting, MySQL for database management, and Bootstrap for responsive design. The integration ensures developers can craft dynamic and database-driven websites. Emphasizing hands-on learning, the course offers numerous projects. Whether it's a simple webpage, a responsive blog, or a complete e-commerce platform, each project is designed to consolidate and apply the skills learned. Recognizing the rapid changes in the web development world, the 2.0 version integrates lessons on the latest frameworks, tools, and best practices. This ensures learners stay relevant in the ever-evolving industry. One of the highlights is the vibrant community of learners and mentors. Regular Q&A sessions, forums, and collaborative projects make the learning experience interactive and engaging. In essence, The Complete Web Developer Course 2.0 offers a dynamic blend of foundational knowledge and contemporary skills, making it an ideal choice for anyone aspiring to become a proficient web developer.",
+    "price": 190,
+    "instructorEmail": "sophiarodriguez01@gmail.com",
+    "courseImage": "https://i.ibb.co/GF5JyTY/custom-full-stack-web-developer-front-end-back-end-website-development.jpg",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "Java Programming: Solving Problems with Software",
+    "courseDetails": " Beginners are introduced to the core principles of Java, from its basic syntax to object-oriented programming (OOP) concepts such as classes, objects, inheritance, and polymorphism. These are essential for creating robust and scalable applications.  More than just coding, the course emphasizes logical thinking and problem-solving. Students learn to break down complex problems into manageable tasks and then design algorithms to address them. This algorithmic thinking is a crucial skill for all software developers. Theoretical knowledge is paired with practical exercises. Learners get to work on diverse projects, simulating real-world scenarios. This could range from simple calculators to more intricate applications that process data or interact with users. Beyond writing code, students explore best practices in software design. Principles such as code reusability, modularity, and maintainability are highlighted, ensuring that learners don’t just code, but craft quality software. : Engaging with peers, collaborative projects, and interactive Q&A sessions add a layer of community-driven learning. It promotes the sharing of diverse problem-solving approaches and broadens understanding. In a nutshell, Java Programming: Solving Problems with Software isn't just a coding course. It's a journey that nurtures logical thinking, effective problem-solving, and the art of crafting efficient software",
+    "price": 180,
+    "instructorEmail": "danieal05@gmail.com",
+    "courseImage": "https://i.ibb.co/Pxbt2bm/java-programming-tutorial.webp",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "Python for Data Science and Machine Learning Bootcamp",
+    "courseDetails": "Python Essentials: Recognizing the importance of a solid foundation, the course initiates learners into Python's core syntax, data structures, and libraries, ensuring they’re primed for the advanced topics ahead. Data Manipulation & Analysis: Data, often raw and messy, needs refinement. Utilizing libraries like Pandas and NumPy, participants learn to clean, manipulate, and explore datasets, drawing meaningful insights and preparing data for ML models. Visual Data Exploration: A picture is worth a thousand numbers. With tools like Matplotlib and Seaborn, the course delves into data visualization, teaching learners to create plots, charts, and graphs that narrate compelling stories. Machine Learning Deep Dive: Transitioning to ML, students harness the power of Scikit-learn, diving into algorithms ranging from simple linear regression to intricate ensemble methods and support vector machines. Whether it's predicting sales or classifying images, the course equips learners to handle diverse challenges. Neural Networks & Deep Learning: Tapping into the magic of neural networks and TensorFlow, participants are introduced to deep learning, expanding their capabilities to tackle even more complex problems, like speech recognition or image classification. In essence, Python for Data Science and Machine Learning Bootcamp  isn't just a learning trajectory; it's a transformational experience. It molds novices into adept data scientists, ready to harness data's true potential.",
+    "price": 230,
+    "instructorEmail": "invanovaaelena01@gmail.com",
+    "courseImage": "https://i.ibb.co/gyJptgW/python-data-science.webp",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "Modern React with Redux",
+    "courseDetails": "React Fundamentals: At the outset, learners delve into the essentials of React, understanding the virtual DOM, JSX, and component-based architecture. These foundations empower developers to create modular and reusable UI components, a core tenet of React. State Management with Redux: Transitioning to Redux, the course unravels the intricacies of application state management. Redux's principles – the store, actions, and reducers – are dissected, enabling learners to maintain application state predictably and consistently. Connecting React with Redux: The harmony between React and Redux is explored as participants learn to integrate the two, using the 'react-redux' library. This connection ensures seamless data flow and state updates in large-scale applications. Middleware & Asynchronous Operations: Tackling real-world challenges, the bootcamp delves into middleware, particularly Redux Thunk, facilitating asynchronous operations like API calls. This ensures that applications remain responsive and data-driven. Modern Features & Hooks: Staying true to its 'modern' tag, the course covers the latest React features, particularly hooks like useState and useEffect. These features simplify code, enhance performance, and promote functional programming paradigms. In summation, Modern React with Redux is more than just a course; it's a transformative journey. Aspiring front-end developers are sculpted into seasoned professionals, adept at leveraging React and Redux to craft world-class web applications. (Note: This description provides a general overview, reflecting the components of a typical React and Redux course. Actual course specifics might differ.)",
+    "price": 200,
+    "instructorEmail": "invanovaaelena01@gmail.com",
+    "courseImage": "https://i.ibb.co/12kycZj/react-redux.png",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "Mastering Swift",
+    "courseDetails": "Swift, Apple's innovative programming language, has swiftly (pun intended) ascended to become a staple for iOS, macOS, watchOS, and tvOS development. As intuitive as it is powerful, Swift offers both novices and seasoned developers a streamlined pathway to bring their app visions to life. Mastering Swift endeavors to impart a deep understanding of this dynamic language. Swift Basics: Starting from the ground up, learners are introduced to Swift's syntax, foundational data types, and control flows. The interactive playground feature, a Swift hallmark, allows real-time code execution, ensuring immediate feedback and facilitating rapid learning. Object-Oriented Swift: Diving deeper, the course delves into the object-oriented paradigms of Swift. From classes and structures to inheritance and polymorphism, the curriculum demystifies the principles pivotal for crafting modular and reusable code. SwiftUI and Interface Building: Swift isn’t just about backend logic. With SwiftUI, a groundbreaking UI toolkit, developers learn to build fluid and responsive interfaces that seamlessly adapt across all Apple devices, merging aesthetics with functionality. Advanced Swift Features: Mastering means going beyond the basics. Topics like memory management, closures, generics, and error handling are broached, equipping learners with the tools to tackle complex programming challenges. Integration and Deployment: The journey culminates with app deployment. From integrating with Apple's ecosystem services like iCloud and Core Data to navigating the App Store submission process, learners are readied for real-world application launches. In essence, Mastering Swift isn't just a programming course; it's an incubator for budding Apple ecosystem developers, nurturing them from curious enthusiasts to confident professionals.",
+    "price": 190,
+    "instructorEmail": "danieal05@gmail.com",
+    "courseImage": "https://i.ibb.co/JQqdmxx/Mastering-Swift.jpg",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "Advanced CSS and Sass",
+    "courseDetails": "In the world of web development, the aesthetics and user experience of a website are as vital as its functionality. Advanced CSS and Sass is a deep dive into the world of cutting-edge styling techniques, enabling web developers to push boundaries and create websites that are not only functional but also visually captivating. Foundational Refresher: Before leaping into advanced territory, it's essential to solidify the basics. The course revisits core In the world of web development, the aesthetics and user experience of a website are as vital as its functionality. Advanced CSS and Sass is a deep dive into the world of cutting-edge styling techniques, enabling web developers to push boundaries and create websites that are not only functional but also visually captivating. Foundational Refresher: Before leaping into advanced territory, it's essential to solidify the basics. The course revisits core In the world of web development, the aesthetics and user experience of a website are as vital as its functionality. Advanced CSS and Sass is a deep dive into the world of cutting-edge styling techniques, enabling web developers to push boundaries and create websites that are not only functional but also visually captivating. Foundational Refresher: Before leaping into advanced territory, it's essential to solidify the basics. The course revisits core In the world of web development, the aesthetics and user experience of a website are as vital as its functionality. Advanced CSS and Sass is a deep dive into the world of cutting-edge styling techniques, enabling web developers to push boundaries and create websites that are not only functional but also visually captivating. Foundational Refresher: Before leaping into advanced territory, it's essential to solidify the basics. The course revisits core ",
+    "price": 250,
+    "instructorEmail": "sophiarodriguez01@gmail.com",
+    "courseImage": "https://i.ibb.co/k2CZ3pt/sass-vs-css.png",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "Backend Development with Node.js",
+    "courseDetails": "IIn today's digital era, a website's backend is its powerhouse, silently ensuring everything runs smoothly on the surface. Node.js, a runtime that executes JavaScript on the server-side, has revolutionized how we approach backend development, offering speed, scalability, and a unified language for both frontend and backend. The Backend Development with Node.js course demystifies this tool, guiding developers in harnessing its full potential. Node.js Essentials: Begin with the foundations, understanding the core principles of Node.js, its asynchronous event-driven architecture, and the famed non-blocking I/O. This ensures optimal performance even with high-traffic applications. Express.js and Routing: As the de-facto framework for Node, Express.js simplifies tasks like routing, middleware integration, and handling requests and responses. Dive deep into creating RESTful APIs, understanding the flow of data between servers and clients. Database Integration: A backend is incomplete without data storage. Whether it's SQL databases like PostgreSQL or NoSQL databases like MongoDB, learn to connect, retrieve, and manipulate data seamlessly with Node.js. Authentication & Security: Safeguarding user data is paramount. Explore authentication techniques using packages like Passport.js, and delve into security best practices to protect against vulnerabilities. Performance & Deployment: Beyond development, understand how to optimize Node applications for peak performance. Learn deployment techniques, ensuring your applications are accessible to users globally. In a nutshell, Backend Development with Node.js isn't just a technical course—it's a comprehensive journey. It molds participants from curious learners into adept backend developers, ready to power the next generation of web applications.",
+    "price": 240,
+    "instructorEmail": "rajgupta.05@gmail.com",
+    "courseImage": "https://i.ibb.co/nz9jVBK/backend-development-node-js.jpg",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "The Ultimate MySQL Bootcamp",
+    "courseDetails": "In the vast landscape of database management systems, MySQL stands as a titan — a robust, reliable, and widely-used relational database solution. The Ultimate MySQL Bootcamp serves as a beacon for those eager to delve deep into the intricacies of database operations, ensuring a comprehensive understanding of MySQL's potential. In the vast landscape of database management systems, MySQL stands as a titan — a robust, reliable, and widely-used relational database solution. The Ultimate MySQL Bootcamp serves as a beacon for those eager to delve deep into the intricacies of database operations, ensuring a comprehensive understanding of MySQL's potential.MySQL Foundations: Embark on a journey from the absolute basics, acquainting yourself with MySQL's architecture, installation procedures, and the rudiments of SQL (Structured Query Language). Grasp how databases, tables, and rows form the building blocks of substantial data storage.CRUD Operations: Dive deep into the core of database operations — Create, Read, Update, and Delete (CRUD). Master the art of formulating intricate queries to extract, modify, and erase data, tailoring operations to specific requirements. Advanced SQL Techniques: Navigate complex SQL operations, including JOIN clauses to combine data from multiple tables, aggregate functions for summarizing data, and subqueries to craft layered data extraction techniques. Database Design & Normalization: Understand the principles of sound database design. Dive into normalization to structure databases in a way that reduces data redundancy and enhances data integrity. Optimization & Performance: A well-structured database isn't enough. Delve into techniques to optimize queries, ensuring swift response times and efficient data retrieval. Indexing, query caching, and performance tuning become central to this module. Real-world Applications: Transition from theory to practice, simulating real-world scenarios. Whether it's building a database for an e-commerce site or optimizing queries for a social network, hands-on projects cement learning. To encapsulate,The Ultimate MySQL Bootcamp offers more than just knowledge—it promises mastery. From beginners to seasoned developers, it paves the way to becoming a database maestro, equipped to handle the data challenges of modern applications.",
+    "price": 190,
+    "instructorEmail": "amelia.bennett01@gmail.com",
+    "courseImage": "https://i.ibb.co/1RRPb7m/My-SQL-Bootcamp.jpg",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "Deep Learning Specialization by Andrew Ng",
+    "courseDetails": "The Deep Learning Specialization, helmed by the iconic Andrew Ng, serves as an ambitious venture into the world of neural networks and their applications. Designed for those aspiring to harness the transformative potential of deep learning in various fields, this course breaks down complex concepts into digestible, practical modules. Foundational Blocks: Starting from the essentials, learners are introduced to the structure and functioning of neural networks. Concepts of forward and backward propagation, cost functions, and gradient descent form the backbone of the initial modules, ensuring a rock-solid foundation. Diving Deeper with CNNs and RNNs: As the course progresses, more intricate architectures like Convolutional Neural Networks (CNNs) - pivotal for image recognition, and Recurrent Neural Networks (RNNs) - crucial for sequential data processing, are thoroughly explored. Structuring Projects: Beyond the technicalities, Andrew Ng emphasizes the importance of structuring AI projects. From setting up the problem, collecting data, to finally iterating on models, students gain insight into the entire lifecycle of a deep learning project. Regularization and Optimization: With deep networks come challenges. Techniques for regularization to prevent overfitting, optimization strategies to enhance convergence, and best practices for training are meticulously covered. Real-world Case Studies: Integrating theory with practice, the specialization delves into case studies spanning industries. Whether it's healthcare, automotive AI, or voice assistants, tangible applications of deep learning are brought to the fore. In essence, the Deep Learning Specialization isn't merely academic; it's transformative. Andrew Ng's visionary approach, combined with hands-on projects, equips learners to not just understand but also innovate using deep learning in diverse domains.",
+    "price": 220,
+    "instructorEmail": "sophiarodriguez01@gmail.com",
+    "courseImage": "https://i.ibb.co/MRqdD5f/Deep-Learning.png",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "Complete C# Masterclass",
+    "courseDetails": "Embarking on the path of software development can be daunting, but with the right resources, it becomes an enriching experience. The Complete C# Masterclass serves as a holistic guide for those aspiring to grasp the intricacies of C# – a powerful, versatile, and popular programming language. C# Basics & Fundamentals: The journey begins by demystifying the basic syntax, variables, and data types. With a focus on practical exercises, learners get a firm grip on foundational concepts, ensuring they’re well-prepped for advanced modules. Object-Oriented Programming (OOP): Delving deeper, the masterclass dives into the heart of OOP. By exploring classes, inheritance, polymorphism, and encapsulation, students learn to structure their code modularly, fostering reusability and efficiency. Data Structures & Algorithms: Essential for problem-solving, learners will grasp various data structures (like lists, stacks, and queues) and algorithms to manipulate these structures, enhancing their logical thinking and problem-solving prowess.Advanced Features: From understanding LINQ (Language Integrated Query) to diving into asynchronous programming with Async/Await, the course ensures participants are equipped with the knowledge to tackle real-world challenges. Practical Projects: Merging knowledge with hands-on application, the masterclass includes multiple projects. Whether it’s building a simple calculator, a game, or a more complex application, these endeavors cement learning and provide a tangible showcase of skills. In summation, the Complete C# Masterclass isn’t just an educational course; it’s a transformative experience. It meticulously transforms beginners into proficient C# developers, ready to innovate, build, and make a mark in the software development world.",
+    "price": 210,
+    "instructorEmail": "amelia.bennett01@gmail.com",
+    "courseImage": "https://i.ibb.co/cFR8p4m/Complete-C.jpg",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "GraphQL with React",
+    "courseDetails": "Modern web development demands efficient, flexible, and precise data handling. Marrying the power of GraphQL with the versatility of React, the GraphQL with React course offers developers a deep dive into a groundbreaking approach to data fetching and manipulation.  GraphQL Unveiled: Starting with a thorough introduction, learners grasp the foundational concepts behind GraphQL. Unlike traditional REST APIs that often over-fetch or under-fetch data, GraphQL allows clients to request exactly what they need, optimizing bandwidth and performance. Integrating GraphQL with React: The real magic unfolds as participants learn to weave GraphQL into React applications. Through libraries like Apollo Client, React components are supercharged, fetching and displaying data with newfound precision. Queries, Mutations & Subscriptions: Through practical examples, users dive deep into the three pillars of GraphQL operations: querying data, mutating (or changing) data, and setting up real-time data with subscriptions. Schema & Resolvers: On the server-side, the course delves into defining GraphQL schemas, specifying the types of data that can be fetched, and creating resolvers that dictate how data is retrieved or modified. State Management with Apollo: Move over traditional state managers! Apollo Client not only facilitates fetching data but also robust state management, streamlining how data flows and is stored in React apps. Real-World Applications: Theory meets application as learners embark on building full-fledged projects, integrating authentication, database operations, and more, all powered by GraphQL and React. In essence, GraphQL with React isn’t just a course — it's a paradigm shift. By its end, developers are not just versed in new tools; they're equipped with a philosophy that reshapes how modern web interfaces interact with data.",
+    "price": 170,
+    "instructorEmail": "invanovaaelena01@gmail.com",
+    "courseImage": "https://i.ibb.co/WpX90Vx/Graph-QL-with-React.jpg",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "The Web Developer Bootcamp",
+    "courseDetails": "In the digital age, web development stands as a cornerstone skill, bridging the gap between human creativity and digital interactivity. The Web Developer Bootcamp is tailored for those keen on venturing into this dynamic domain, offering a holistic exploration of both frontend and backend development landscapes. Dive into Fundamentals: Initiating with the bedrock of web development, learners grapple with HTML and CSS. These technologies provide the foundation for structuring content and styling it, ensuring every website's visual appeal and functionality.JavaScript & Dynamic Content: The journey deepens with JavaScript, the scripting language vital for interactive web content. From manipulating the Document Object Model (DOM) to handling events, participants imbue web pages with life. Backend Basics: Transitioning to the server-side, the course elucidates the nuances of backend development, introducing technologies like Node.js for runtime and Express.js for server framework. This ensures websites don’t just look good, but also function seamlessly. Databases & Persistence: A deep dive into databases, using platforms like MongoDB, equips learners to store, retrieve, and manipulate data, forming the backbone of dynamic web applications.Advanced Concepts: Beyond the foundational, the bootcamp touches upon advanced topics like API integration, authentication, and state management, ensuring a well-rounded web development prowess.Practical Projects: Theoretical knowledge solidifies through hands-on projects. From building basic web pages to crafting complex web applications, students experience the full cycle of web development, culminating in a rich portfolio. Conclusively, The Web Developer Bootcamp is more than just education—it's transformational. From novices to tech enthusiasts, it transforms attendees into adept web developers, ready to innovate in the vast digital playground.",
+    "price": 150,
+    "instructorEmail": "sophiarodriguez01@gmail.com",
+    "courseImage": "https://i.ibb.co/WpX90Vx/Graph-QL-with-React.jpg",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "Angular - The Complete Guide",
+    "courseDetails": "In the extensive universe of front-end frameworks, Angular stands out as a formidable contender. Crafted by Google, Angular offers a robust platform for creating dynamic and scalable web applications. Angular - The Complete Guide serves as an in-depth roadmap for both beginners and seasoned developers eager to master this potent tool. Angular Foundations: The voyage commences with a profound understanding of Angular’s core architecture. Modules, components, and directives are unpacked, providing a solid foundation for more complex topics. Data Binding & Component Communication: Delve deep into the heart of Angular with two-way data binding, ensuring seamless synchronization between the template and the underlying component logic. Discover how components exchange data, streamlining application functionality. Routing & Navigation: Explore Angular’s powerful routing module, enabling the creation of Single Page Applications (SPA) that provide fluid navigation experiences without full page reloads. Forms & Validation: From template-driven to reactive forms, grasp the techniques to gather user input effectively, embellished with real-time validation feedback. HTTP & API Interaction: Dive into Angular’s HTTP module, crafting requests to interact with back-end servers and external APIs. Grapple with asynchronous operations and data transformation. State Management: Delve into advanced state management solutions like NgRx, ensuring applications remain scalable, maintainable, and reactive. Deployment & Optimization: Conclude the journey by learning best practices for deploying Angular applications, ensuring they're optimized for performance, responsive, and compatible across various devices. In summary, Angular - The Complete Guide isn't merely an instructional course—it's a transformative experience, meticulously molding participants into Angular experts, ready to shape the future of web applications.",
+    "price": 250,
+    "instructorEmail": "sophiarodriguez01@gmail.com",
+    "courseImage": "https://i.ibb.co/BZVC3dR/Angular.png",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "Ruby on Rails: An Introduction",
+    "courseDetails": "In the kaleidoscope of web development frameworks, Ruby on Rails (often just 'Rails') emerges as an intuitive and powerful tool for crafting high-quality web applications swiftly. Ruby on Rails: An Introduction is a beacon for those venturing into this arena, guiding them through Rails' conventions, simplicity, and elegance. Ruby Foundations: Before plunging into Rails, a solid grasp of the Ruby programming language is essential. Participants are introduced to Ruby's object-oriented principles, dynamic nature, and expressive syntax, which form the backbone of the Rails framework. Rails Philosophy: Grasp the core tenets of Rails: Convention over Configuration (CoC) and Don't Repeat Yourself (DRY). These principles facilitate rapid development without compromising on code quality. MVC Architecture: Rails employs the Model-View-Controller (MVC) architectural pattern. Dive deep into how data (Model), user interface (View), and logic (Controller) seamlessly interact within a Rails application. Database Integration: Understand Active Record, Rails' Object Relational Mapping (ORM) system, which facilitates smooth interactions with databases. Learn to perform CRUD operations, manage migrations, and establish associations between models. Form Handling & Authentication: Explore the processes of gathering user input using forms, validating this data, and implementing authentication systems to manage user access and sessions. Testing & Deployment: Embrace Rails’ emphasis on test-driven development (TDD), ensuring code reliability. Learn the nuances of deploying Rails applications, making them accessible to users worldwide. In essence, Ruby on Rails: An Introduction is more than a tutorial—it's a gateway. Guiding participants from foundational concepts to practical application, it molds them into adept Rails developers, ready to innovate and impact the web development landscape.",
+    "price": 220,
+    "instructorEmail": "rajgupta.05@gmail.com",
+    "courseImage": "https://i.ibb.co/xfRPZHc/Ruby-on-Rails.jpg",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "Introduction to Game Development with Unity",
+    "courseDetails": "Navigating the vibrant realm of game development demands tools that are both powerful and user-friendly. Unity stands at the forefront of this domain, heralded for its versatility and extensive features. Introduction to Game Development with Unity demystifies this engine, offering budding game developers a robust foundation. Unity Basics: Embark on a journey exploring Unity's interface and core concepts. Understand the engine's architecture, scene hierarchy, and component-driven design, providing the bedrock for more advanced topics. 3D & 2D Game Mechanics: Delve into the creation of both 2D sprites and 3D models, understanding their mechanics, physics, and interactions. Whether it's platformers or first-person shooters, grasp the principles underlying different game genres. Scripting & Logic: Harness the power of C# scripting in Unity. Learn to create game behaviors, control character movements, and manage game states, adding depth and interactivity to your projects. Animation & Audio: Breathe life into game assets using Unity's animation tools, synchronizing movements with game logic. Complement visuals with immersive audio effects and background scores, enriching the gaming experience. User Interfaces (UI): Design intuitive and attractive UI elements like health bars, score counters, and menus, ensuring players can navigate and interact with your game seamlessly. Final Projects & Deployment: Consolidate learning through hands-on projects, culminating in a game prototype. Learn the intricacies of deploying games across platforms, from PCs to mobiles and consoles. In a nutshell, Introduction to Game Development with Unity is more than a technical walkthrough—it's an adventure. It transforms participants from gaming enthusiasts into budding game developers, ready to shape the future of interactive entertainment.",
+    "price": 150,
+    "instructorEmail": "danieal05@gmail.com",
+    "courseImage": "https://i.ibb.co/7twz4CV/Game-Development.png",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "Go: The Complete Developer's Guide",
+    "courseDetails": "In the constellation of programming languages, Go (often termed 'Golang' due to its domain) shines brightly. Celebrated for its simplicity, performance, and built-in support for concurrent programming, Go is increasingly adopted by enterprises and startups alike. Go: The Complete Developer's Guide serves as an illuminating pathway for developers keen on mastering this modern language. Introductory Dive: The course initiates learners into Go's world by exploring its concise syntax, robust standard library, and statically-typed nature, fostering a quick grasp of foundational concepts. Data Structures: Dive into Go's native data structures such as slices, maps, and structs. Understand their nuances, applications, and performance implications, ensuring effective data manipulation. Concurrency in Go: One of Go's crowning features is its native support for concurrent programming using goroutines and channels. Break down these concepts, mastering the art of executing multiple tasks simultaneously without the overhead of traditional multithreading. Interface & Composition: Explore Go's unique approach to object-oriented principles. Delve deep into interfaces and composition, empowering code reusability and clean design without the intricacies of class-based inheritance. Error Handling & Testing: Grasp Go's pragmatic approach to error handling, ensuring software reliability. Couple this with Go's testing framework to build applications that are not only performant but also robust and bug-free. Package Management & Deployment: Understand Go's module system and package management. Learn best practices for organizing code, managing dependencies, and deploying Go applications efficiently. To encapsulate, Go: The Complete Developer's Guide isn't just an academic endeavor — it's a transformative expedition. By its conclusion, attendees are not just versed in Go but are empowered to craft efficient, concurrent, and scalable applications fit for modern challenges.",
+    "price": 190,
+    "instructorEmail": "invanovaaelena01@gmail.com",
+    "courseImage": "https://i.ibb.co/j83dGK1/Go-PNG-Pic.png",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "R Programming",
+    "courseDetails": "Amidst the surge of big data and the need for intelligent data analysis, R programming emerges as a beacon for statisticians, data scientists, and analysts. This language, primarily developed for statistical computing, has blossomed into a versatile tool, handling everything from data manipulation to machine learning. Statistical Foundation: At its heart, R is tailored for statistics. Users can seamlessly conduct t-tests, chi-squared tests, linear regressions, and more, rendering it indispensable for researchers and analysts. Data Manipulation: With packages like dplyr and tidyr, R excels in cleaning, transforming, and restructuring data. These tools make it easy to filter, group, and reshape data sets, preparing them for in-depth analysis. Graphical Prowess: R's ggplot2 package is celebrated for its ability to craft detailed and aesthetically pleasing data visualizations. From simple bar graphs to intricate scatterplot matrices, the ability to visualize data aids in both analysis and presentation. Machine Learning: R is not confined to just statistical models. With packages like caret and randomForest, R steps confidently into the domain of predictive modeling and machine learning. Integrated Development Environment (IDE): RStudio, R's popular IDE, enhances the coding experience by offering a user-friendly interface, integrated plotting, and debugging tools. Community & Packages: R boasts a vast and growing community. The Comprehensive R Archive Network (CRAN) hosts thousands of packages, expanding R's capabilities continuously. In summation, R programming is a linchpin in the data-driven world. Whether for academic research, business analytics, or data science, R offers tools and packages that simplify complexities, making data analysis both an art and a science.",
+    "price": 230,
+    "instructorEmail": "amelia.bennett01@gmail.com",
+    "courseImage": "https://i.ibb.co/wR44967/R-Programming.jpg",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  },
+  {
+    "courseName": "ASP.NET Core - Beginner to Advanced",
+    "courseDetails": "In the arena of web frameworks, ASP.NET Core stands out as a versatile powerhouse. Developed by Microsoft, it ushers in a new era for developers keen on crafting cross-platform, high-performance web applications and APIs. ASP.NET Core - Beginner to Advanced offers a holistic learning trajectory, transitioning novices into adept web developers proficient in this modern framework. Starting with Basics: The course introduces participants to the foundational pillars of ASP.NET Core, emphasizing its modular architecture, Dependency Injection (DI) system, and middleware-based request pipeline. This ensures a solid grounding for further exploration. Dynamic Web Pages with Razor: Dive into the Razor templating engine, a powerful tool for crafting dynamic web content. Seamlessly merge HTML and C# to create interactive views, making web pages come alive. Building Robust APIs: ASP.NET Core shines in API development. Learn to design RESTful services, ensuring seamless data flow between server and client, fueling applications from simple websites to intricate Single Page Applications (SPAs). Entity Framework Core & Databases: Grasp the intricacies of database operations with Entity Framework Core, the Object-Relational Mapping (ORM) system integral to ASP.NET Core. Master data modeling, migrations, and CRUD operations. Authentication & Authorization: Secure your applications by implementing robust authentication and authorization mechanisms. Understand identity management, user roles, and policy-based security, safeguarding both data and functionality. Deployment & Performance Optimization: Transition from development to production, delving into best practices for deploying applications. Learn to optimize performance, ensuring lightning-fast response times and scalability. In a nutshell, ASP.NET Core - Beginner to Advanced is not just a course—it's a journey. Guiding participants through the vast landscape of modern web development, it molds them into proficient developers, ready to tackle contemporary web challenges head-on.",
+    "price": 250,
+    "instructorEmail": "invanovaaelena01@gmail.com",
+    "courseImage": "https://i.ibb.co/2Y4yQhb/ASPNET-to-NETCore-migration.png",
+    "sits": 150,
+    "availableSits": 150,
+    "enrollStudents": 0,
+    "ratting": 5
+  }
+]

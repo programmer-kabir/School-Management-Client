@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Montserrat", sans-serif;
+}
+.primary-btn {
+  @apply px-6 py-1 rounded-md bg-cyan-500 text-black border border-cyan-500 font-medium hover:text-white hover:bg-transparent;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease,
+    color 0.3s ease;
+}
+.secondary-btn {
+  @apply py-1 rounded-md  bg-cyan-500 text-white border  font-semibold text-base  hover:bg-cyan-800 hover:text-black;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease,
+    color 0.3s ease;
+}
+.background {
+  background-image: url("./assets/Image/light_submit_2-[Converted].png");
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@keyframes upDownLeftRightAnimation {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  25% {
+    transform: translateY(-10px) translateX(0);
+  }
+
+  /* Moves Up */
+  50% {
+    transform: translateY(10px) translateX(0);
+  }
+
+  /* Moves Down */
+  75% {
+    transform: translateY(0) translateX(-10px);
+  }
+
+  /* Moves Left */
+  100% {
+    transform: translateY(0) translateX(10px);
+  }
+}
+.style {
+  animation: upDownLeftRightAnimation 5s infinite;
+}
+
+.bg-image {
+  background-image: url("https://i.ibb.co/6Yh2jHb/user-2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.btn {
+  background: #000;
+}
+/* Dropdown content */
+.dropdown-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-20px);
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+  width: 200px; /* Adjust this as per your needs */
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for dropdown effect */
+  border-radius: 4px; /* Optional: Smoothens edges of dropdown */
+}
+
+/* Show state */
+.dropdown-content.show {
+  max-height: 300px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+  transition: transform 0.3s;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.secondary-btn[disabled] {
+  cursor: not-allowed;
+}
