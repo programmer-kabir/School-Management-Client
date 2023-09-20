@@ -9,7 +9,8 @@ import useAdmin from "../Hooks/useAdmin";
 import { loadUsersData, usersData } from "../Hooks/userData";
 import useAuth from "../Hooks/useAuth";
 import { FaBookmark } from "react-icons/fa";
-
+import { IoCheckmarkDoneOutline } from "react-icons/io5";
+import logo from '../../assets/Image/logo.gif'
 const Sidebar = () => {
   const [isAdmin] = useAdmin();
   // console.log(isAdmin);
@@ -43,10 +44,8 @@ const Sidebar = () => {
       <div className="bg-[#263238] w-1/4 h-screen fixed">
         {/* Header */}
         <div className="border-b border-white/20">
-          <Link to={"/"}>
-            <h5 className="text-xl font-semibold text-white text-center pt-6 pb-5">
-              Your Logo
-            </h5>
+          <Link to={"/"} className="pt-5">
+            <img className="h-20 w-20 mx-auto" src={logo} alt="" />
           </Link>
         </div>
         {/* Left side Content */}
@@ -123,6 +122,17 @@ const Sidebar = () => {
               >
                 <FaBookmark className="w-5 h-5" />
                 <span>booked course</span>
+              </NavLink>
+              <NavLink
+                to="enrol-course"
+                className={({ isActive }) =>
+                  `font-semibold transition-all disabled:opacity-50 hover:bg-gray-700 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg  text-white active:opacity-[0.85] w-full flex items-center gap-4 px-5 capitalize ${
+                    isActive ? activeLinkClass : "text-white"
+                  }`
+                }
+              >
+                <IoCheckmarkDoneOutline className="w-5 h-5" />
+                <span>Enrol Course</span>
               </NavLink>
             </>
           )}

@@ -150,26 +150,15 @@ const bookData = ['sjsjf', '655465asf']
                   <span> {instructorData?.instructorName}</span>
                 </p>
               </div>
-              <div>
-                <Link to="../all-class">
-                  <button className="primary-btn hover:text-black">Back</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 justify-end">
-            <button  
+              <button  
               onClick={() => handleBookMark(data?._id)}
               className="secondary-btn flex items-center gap-1 px-5"
               disabled={isBookmarked}
             >
-              <FaBookmark />
-              Booked Course
-            </button>
-            <button className="secondary-btn flex items-center gap-1 px-5">
               <FaCartPlus />
               Add Cart
             </button>
+            </div>
           </div>
         </section>
       </div>

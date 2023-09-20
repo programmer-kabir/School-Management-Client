@@ -14,6 +14,8 @@ import ClassDetails from "../Component/AllClass/ClassDetails";
 import BookMark from "../Pages/Dashboard/User/BookMark/Booked";
 import BookMarkDetails from "../Component/Dashboard/BookMark/BookMarkDetails";
 import Booked from "../Pages/Dashboard/User/BookMark/Booked";
+import Payment from "../Pages/Dashboard/User/Payment/Payment";
+import EnrolCourse from "../Pages/Dashboard/User/EnrolCourse/EnrolCourse";
 
 const router = createBrowserRouter([
   {
@@ -64,9 +66,14 @@ const router = createBrowserRouter([
         element: <Booked />,
       },
       {
-        path: "booked/:id",
-        element: <BookMarkDetails />,
+        path:'booked/payment',
+        element:<Payment />
       },
+    {
+      path:"enrol-course",
+      element:<EnrolCourse />
+    }
+
     ],
   },
 ]);
