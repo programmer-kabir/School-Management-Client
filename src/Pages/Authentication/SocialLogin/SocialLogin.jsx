@@ -10,14 +10,14 @@ const SocialLogin = () => {
         googleSingIn()
         .then((result) => {
             const LoggedUser = result.user;
-            console.log(LoggedUser);
+            // console.log(LoggedUser);
 
             const saveUser = {name:LoggedUser.displayName, email:LoggedUser.email, photo:LoggedUser.pho}
-            console.log("update done");
+            // console.log("update done");
             navigate('/')
             // ...
           }).catch((error) => {
-            console.log(error);
+            // console.log(error);
             const errorMessage = error.message;
           });
     }

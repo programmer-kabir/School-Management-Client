@@ -25,7 +25,7 @@ const Heading = ({ currentUserId }) => {
   // console.log(matchedUser);
 
   const { user, logOut } = useAuth();
-  console.log(user);
+  // console.log(user);
   const [open, setOpen] = useState(false);
   const toggleBar = () => {
     setOpen(!open);

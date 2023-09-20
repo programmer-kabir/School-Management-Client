@@ -71,12 +71,12 @@ const Profile = () => {
 
       const responseData = await response.json();
       if (response.ok) {
-        console.log("Update successful:", responseData);
+        // console.log("Update successful:", responseData);
       } else {
-        console.error("Failed to update:", responseData);
+        // console.error("Failed to update:", responseData);
       }
     } catch (error) {
-      console.error("An error occurred:", error);
+      // console.error("An error occurred:", error);
     }
   };
 

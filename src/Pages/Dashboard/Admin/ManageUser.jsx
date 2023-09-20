@@ -20,7 +20,7 @@ const ManageUser = () => {
     setUsers(usersFromRedux);
   }, [usersFromRedux]);
   const handleMakeAdmin = (user) => {
-    console.log(user);
+    // console.log(user);
     fetch(`${import.meta.env.VITE_LOCALHOST_KEY}/users/admin/${user?._id}`, {
       method: "PATCH",
     })
@@ -48,7 +48,7 @@ const ManageUser = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.modifiedCount) {
           const updatedUsers = users.map((u) => {
             if (u._id === user._id) {
@@ -69,7 +69,7 @@ const ManageUser = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.modifiedCount) {
           const updatedUsers = users.map((u) => {
             if (u._id === user._id) {

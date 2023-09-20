@@ -14,11 +14,8 @@ import Swal from "sweetalert2";
 import toast from 'react-hot-toast';
 import useBookMark from "../Hooks/useBookMark";
 
-const ClassDetails = () => {
-  const [bookmark] = useBookMark()
-  const bookData = bookmark.map(book => book.id)
-  // console.log(bookData);
-
+const ClassDetails = () => {;
+const bookData = ['sjsjf', '655465asf']
   const { id } = useParams();
   const isBookmarked = bookData.includes(id);
   console.log(isBookmarked);
@@ -65,7 +62,7 @@ const ClassDetails = () => {
       });
     } else {
       const saveData = { id: id, userEmail: user?.email };
-      console.log(saveData);
+      // console.log(saveData);
       axios
         .post(`${import.meta.env.VITE_LOCALHOST_KEY}/bookmark`, { saveData })
         .then((response) => {
@@ -167,7 +164,7 @@ const ClassDetails = () => {
               disabled={isBookmarked}
             >
               <FaBookmark />
-              Book Mark
+              Booked Course
             </button>
             <button className="secondary-btn flex items-center gap-1 px-5">
               <FaCartPlus />

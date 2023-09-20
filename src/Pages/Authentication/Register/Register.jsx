@@ -6,8 +6,11 @@ import icon from "../../../assets/Image/icon.svg";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { RegisterUser } from "../../../Component/Apis/UserApis";
-
+import logo from "../../../assets/Image/logo.gif";
+import { FaFacebookF, FaGithub, FaGooglePlusG } from "react-icons/fa";
+import { RiImageAddLine } from "react-icons/ri";
 const Register = () => {
+  const [isFileDialogOpen, setIsFileDialogOpen] = useState(false);
   const { newRegister, updateUserProfile, loading } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
@@ -33,9 +36,9 @@ const Register = () => {
   const url =
     "https://api.imgbb.com/1/upload?key=10695559364aab2c6fcb1fe3df5357eb";
   const onSubmit = async (data) => {
-    // console.log(data);
+    console.log(data);
     const image = data.image[0];
-    console.log(image);
+    // console.log(image);
     const formData = new FormData();
     formData.append("image", image);
     fetch(url, {
@@ -45,130 +48,120 @@ const Register = () => {
       .then((res) => res.json())
       .then((image) => {
         const photo = image?.data?.display_url;
+        console.log(photo);
         // New Register
         newRegister(data.email, data.password)
           .then((result) => {
             const user = result.user;
-            updateUserProfile(data.firstName, photo).then(
-              (data) => {
-                RegisterUser(user);
-              }
-            );
+            updateUserProfile(data.firstName, photo).then((data) => {
+              RegisterUser(user);
+            });
             navigate("/");
           })
           .catch((error) => console.log(error));
+      })
+
+      .then((result) => {
+        const user = result.user;
+
+        updateUserProfile(data.firstName).then((d) => {
+          RegisterUser(user);
+        });
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err.message);
       });
-
-    //   .then((result) => {
-    //     const user = result.user;
-
-    //     updateUserProfile(data.firstName).then((d) => {
-    //       RegisterUser(user);
-    //     });
-    //   })
-    //   .catch((err) => {
-    //     console.log(err.message);
-    //   });
   };
   return (
     <div>
-      <div className="background md:flex flex-row-reverse items-center justify-between md:pr-5 md:h-screen md:p-10">
-        <img
-          className="md:w-1/3 w-full style p-10 pb-7 md:pb-0"
-          src={icon}
-          alt=""
-        />
-
-        <div className="md:w-3/5 w-full px-5">
-          <form className="" onSubmit={handleSubmit(onSubmit)}>
-            <div
-              className="space-y-3 p-6 w-full md:ml-5 rounded-2xl "
-              style={{ backgroundColor: "rgba(10,10,43,0.1)" }}
-            >
-              <h2 className="text-3xl font-semibold text-center text-white pb-5">
-                Register Form
+      <section className="min-h-screen flex items-stretch text-white pt-10 md:pt-16">
+        <div
+          className="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center"
+          style={{
+            backgroundImage:
+              "url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80)",
+          }}
+        >
+          <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
+          <div className="w-full px-24 z-10">
+            <h1 className="text-5xl font-bold text-left tracking-wide">
+              Log In
+            </h1>
+            <p className="text-3xl my-4">Sign in to access your account</p>
+          </div>
+        </div>
+        <div
+          className="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0"
+          style={{ backgroundColor: "#161616" }}
+        >
+          <div
+            className="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center"
+            style={{
+              backgroundImage:
+                "url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80)",
+            }}
+          >
+            <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
+          </div>
+          <div className="w-full py-6 z-20">
+            <div className="">
+              <img src={logo} alt="" className="w-auto h-16 inline-flex" />
+              <h2 className="text-2xl text-white font-bold inline">
+                Programming Boss
               </h2>
-              <div className=" md:space-y-0 md:space-x-2">
-                <Controller
+            </div>
+            <form
+              action=""
+              onSubmit={handleSubmit(onSubmit)}
+              className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto"
+            >
+              {/* Fast Name */}
+
+              <div className="pb-2 pt-4">
+                <input
+                  type="name"
                   name="firstName"
-                  control={control}
-                  rules={{ required: "First name is required" }}
-                  render={({ field }) => (
-                    <input
-                      {...field}
-                      type="text"
-                      className="flex-1 p-2 focus:outline-none rounded-lg  placeholder-gray-400  w-full"
-                      placeholder="Your Ful Name"
-                      onChange={(e) => {
-                        handleInputChange("firstName", e.target.value);
-                        field.onChange(e);
-                      }}
-                    />
-                  )}
+                  id="name"
+                  placeholder="Your Name Here"
+                  {...register("firstName", { required: true })}
+                  className="block w-full p-4 focus:bg-black outline-none rounded-full text-lg  bg-black"
                 />
               </div>
+              {/* Image */}
 
-
-              <div className="md:flex space-y-4 gap-3 md:space-y-0">
+              <div className="md:flex items-center  hover:shadow-xl rounded-full p-4 text-lg bg-black ">
                 <input
                   type="file"
-                  name="image"
                   id="image"
+                  name="image"
                   {...register("image")}
-                  className="flex-1 p-2 font-semibold bg-white placeholder-gray-400 focus:outline-none rounded-lg w-full"
                 />
               </div>
-
-              <Controller
-                name="email"
-                control={control}
-                rules={{
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Invalid email address",
-                  },
-                }}
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    type="email"
-                    className="w-full p-2 placeholder-gray-400 focus:outline-none rounded"
-                    placeholder="Email Address"
-                    onChange={(e) => {
-                      handleInputChange("email", e.target.value);
-                      field.onChange(e);
-                    }}
-                  />
-                )}
-              />
-              <div className="relative">
-                {" "}
-                <Controller
+              {/* Email Name */}
+              <div className="pb-2 pt-2">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  {...register("email", { required: true })}
+                  className="block w-full p-4 focus:bg-black outline-none rounded-full text-lg  bg-black"
+                />
+              </div>
+              {/* password  */}
+              <div className="flex w-full  outline-none focus:bg-black text-lg rounded-full bg-black">
+                <input
+                  className="w-full p-4 outline-none focus:bg-black rounded-full text-lg bg-black"
+                  type={showPassword ? "text" : "password"}
+                  {...register("password", { required: true })}
                   name="password"
-                  control={control}
-                  rules={{
-                    required: "password required",
-                    pattern: {
-                      message: "Invalid password format",
-                    },
-                  }}
-                  render={({ field }) => (
-                    <input
-                      {...field}
-                      type={showPassword ? "text" : "password"}
-                      className="w-full p-2 placeholder-gray-400 focus:outline-none rounded"
-                      placeholder="Enter Your Password"
-                      onChange={(e) => {
-                        handleInputChange("password", e.target.value);
-                        field.onChange(e);
-                      }}
-                    />
-                  )}
+                  id="password"
+                  placeholder="Password"
                 />
                 <button
                   type="button"
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2"
+                  className="pr-4"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
@@ -178,8 +171,15 @@ const Register = () => {
                   )}
                 </button>
               </div>
-
-              <div className="flex gap-2 items-center">
+              <div className="flex items-center justify-between px-2">
+                <div className="text-right text-gray-400 hover:underline hover:text-gray-100">
+                  <Link to="/login">Login Here?</Link>
+                </div>
+                <div className="text-left text-gray-400 hover:underline hover:text-gray-100">
+                  <a href="#">Forgot your password?</a>
+                </div>
+              </div>
+              <div className="flex gap-2 px-2 pt-1 items-center">
                 <input
                   type="checkbox"
                   className="w-5 h-4"
@@ -191,22 +191,22 @@ const Register = () => {
                   I agreement your Register
                 </span>
               </div>
-              <button
-                type="submit"
-                disabled={!allFieldsFilled || !isCheckboxChecked}
-                className={`w-full p-2 text-white rounded ${
-                  allFieldsFilled && isCheckboxChecked
-                    ? "bg-cyan-500 hover:bg-cyan-600"
-                    : "bg-gray-500 cursor-not-allowed"
-                }`}
-              >
-                Sign Up
-              </button>
-              <SocialLogin />
-            </div>
-          </form>
+              <div className="px-4 pb-2 pt-4">
+                <button
+                  disabled={!isCheckboxChecked}
+                  className={`uppercase block w-full p-4 text-lg rounded-full ${
+                    !isCheckboxChecked
+                      ? "bg-gray-500"
+                      : "bg-cyan-500 hover:bg-cyan-600"
+                  } focus:outline-none`}
+                >
+                  sign in
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

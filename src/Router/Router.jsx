@@ -11,7 +11,9 @@ import ManageStudent from "../Pages/Dashboard/Admin/ManageStudent";
 import AllClass from "../Pages/AllClass/AllClass";
 import PrivateRoute from "./PriverRoute";
 import ClassDetails from "../Component/AllClass/ClassDetails";
-import BookMark from "../Pages/Dashboard/User/BookMark/BookMark";
+import BookMark from "../Pages/Dashboard/User/BookMark/Booked";
+import BookMarkDetails from "../Component/Dashboard/BookMark/BookMarkDetails";
+import Booked from "../Pages/Dashboard/User/BookMark/Booked";
 
 const router = createBrowserRouter([
   {
@@ -58,8 +60,12 @@ const router = createBrowserRouter([
         element: <ManageStudent />,
       },
       {
-        path: "bookmark",
-        element: <BookMark />,
+        path: "booked",
+        element: <Booked />,
+      },
+      {
+        path: "booked/:id",
+        element: <BookMarkDetails />,
       },
     ],
   },

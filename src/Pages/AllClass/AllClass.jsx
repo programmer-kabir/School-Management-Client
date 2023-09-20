@@ -2,13 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUClass } from "../Redux/Class/ClassSlice";
 import Content from "../../Component/Content";
-import { AiFillDollarCircle } from "react-icons/ai";
 import Title from "../../Component/Design/Title";
-import Rating from "react-rating";
-import { FaRegStar, FaStar } from "react-icons/fa";
-import { MdDescription } from "react-icons/md";
-import { Link } from "react-router-dom";
 import Loader from "../../Component/Loader/Loader";
+import ClassCart from "../../Component/Design/ClassCart";
 const AllClass = () => {
   const {
     isLoading,
@@ -32,53 +28,8 @@ const AllClass = () => {
           {isLoading && <Loader />}
           {classData &&
             classData.map((Class) => (
-              <div key={Class._id}>
-                <section className="flex flex-col h-[365px] border border-cyan-600 rounded-lg px-1 py-1">
-                  <article className="mx-auto relative flex-grow">
-                    <div className="overflow-hidden rounded-lg">
-                      <img
-                        className="w-full rounded-lg h-[200px] transform hover:scale-110 duration-200"
-                        src={Class?.courseImage}
-                        alt="CourseImage"
-                      />
-                    </div>
-
-                    <div className="pr-5  pt-2">
-                      <h2 className="text-base font-semibold">
-                        {Class?.courseName}
-                      </h2>
-                      <p className="font-semibold py-1">
-                        Enroll Student: {Class.enrollStudents}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <div className="flex gap-2">
-                          <AiFillDollarCircle className="w-5 h-5" />
-                          <p className="font-medium">${Class?.price}</p>
-                        </div>
-                        <div>
-                          <Rating
-                            readonly
-                            className="text-black"
-                            placeholderRating={Class?.ratting}
-                            emptySymbol={<FaRegStar />}
-                            placeholderSymbol={<FaStar color="black" />}
-                            fullSymbol={<FaStar color="black" />}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                  <div className="mt-auto">
-                    <Link to={Class?._id}>
-                      <button className="secondary-btn w-full text-center justify-center flex items-center gap-1">
-                        <MdDescription size={20} />
-                        Details
-                      </button>
-                    </Link>
-                  </div>
-                </section>
-              </div>
-            ))}
+              <ClassCart Class={Class}/>
+              ))}
         </div>
       </div>
     </Content>
@@ -86,3 +37,51 @@ const AllClass = () => {
 };
 
 export default AllClass;
+
+// <div key={Class._id}>
+  
+//   {/* <section className="flex flex-col h-[365px] border border-cyan-600 rounded-lg px-1 py-1">
+//     <article className="mx-auto relative flex-grow">
+//       <div className="overflow-hidden rounded-lg">
+//         <img
+//           className="w-full rounded-lg h-[200px] transform hover:scale-110 duration-200"
+//           src={Class?.courseImage}
+//           alt="CourseImage"
+//         />
+//       </div>
+
+//       <div className="pr-5  pt-2">
+//         <h2 className="text-base font-semibold">
+//           {Class?.courseName}
+//         </h2>
+//         <p className="font-semibold py-1">
+//           Enroll Student: {Class.enrollStudents}
+//         </p>
+//         <div className="flex items-center justify-between">
+//           <div className="flex gap-2">
+//             <AiFillDollarCircle className="w-5 h-5" />
+//             <p className="font-medium">${Class?.price}</p>
+//           </div>
+//           <div>
+//             <Rating
+//               readonly
+//               className="text-black"
+//               placeholderRating={Class?.ratting}
+//               emptySymbol={<FaRegStar />}
+//               placeholderSymbol={<FaStar color="black" />}
+//               fullSymbol={<FaStar color="black" />}
+//             />
+//           </div>
+//         </div>
+//       </div>
+//     </article>
+//     <div className="mt-auto">
+//       <Link to={Class?._id}>
+//         <button className="secondary-btn w-full text-center justify-center flex items-center gap-1">
+//           <MdDescription size={20} />
+//           Details
+//         </button>
+//       </Link>
+//     </div>
+//   </section> */}
+// </div>

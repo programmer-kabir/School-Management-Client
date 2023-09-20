@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { HiOutlineMenuAlt2, HiOutlineMenuAlt3 } from "react-icons/hi";
 import useAuth from "../../../Component/Hooks/useAuth";
+import logo from '../../../assets/Image/logo.gif'
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -65,8 +66,8 @@ const Navbar = () => {
         <div className=" mx-auto ">
           <div className="flex z-50 px-8  justify-between items-center text-white">
             <Link to="/" className="flex items-center gap-2">
-              {/* <img className="h-10 w-10 " src={logo} alt="" /> */}
-              <h2 className="text-2xl text-white font-bold">Your Logo</h2>
+              <img className=" w-16 pt-1" src={logo} alt="" />
+              {/* <h2 className="text-2xl text-white font-bold">Programming Boss</h2> */}
             </Link>
             <div className="hidden md:flex gap-8 items-center font-medium p-4">
               {/* {linksData.map((link, index) => (

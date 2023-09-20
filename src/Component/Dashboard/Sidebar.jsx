@@ -114,7 +114,7 @@ const Sidebar = () => {
           {!isAdmin && (
             <>
               <NavLink
-                to="bookmark"
+                to="booked"
                 className={({ isActive }) =>
                   `font-semibold transition-all disabled:opacity-50 hover:bg-gray-700 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg  text-white active:opacity-[0.85] w-full flex items-center gap-4 px-5 capitalize ${
                     isActive ? activeLinkClass : "text-white"
@@ -122,7 +122,7 @@ const Sidebar = () => {
                 }
               >
                 <FaBookmark className="w-5 h-5" />
-                <span>Book Mark</span>
+                <span>booked course</span>
               </NavLink>
             </>
           )}
