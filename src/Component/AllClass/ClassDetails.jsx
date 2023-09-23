@@ -11,14 +11,27 @@ import Loader from "../Loader/Loader";
 import useAuth from "../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 import useBookMark from "../Hooks/useBookMark";
+import { FiHeart } from "react-icons/fi";
 
-const ClassDetails = () => {;
-const bookData = ['sjsjf', '655465asf']
+const ClassDetails = () => {
+  const [bookData, refetch] = useBookMark();
+  const [favorites, setFavorites] = useState([]);
+  useEffect(() => {
+    const storedFavorites =
+      JSON.parse(localStorage.getItem("favoriteClass")) || [];
+    setFavorites(storedFavorites);
+  }, []);
+
+  // console.log(bookData);
   const { id } = useParams();
-  const isBookmarked = bookData.includes(id);
-  console.log(isBookmarked);
+  const isBooked = bookData.some((book) => String(book.id) === String(id));
+  //
+  const FavoriteDataRaw = localStorage.getItem("favoriteClass");
+  const FavoriteData = FavoriteDataRaw ? JSON.parse(FavoriteDataRaw) : [];
+  const isFavorite = favorites.includes(id);
+  console.log(isFavorite);
   const { user } = useAuth();
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -50,7 +63,7 @@ const bookData = ['sjsjf', '655465asf']
 
     return `${words.slice(0, 25).join(" ")}`;
   };
-  const handleBookMark = (id) => {
+  const handleBooked = (id) => {
     if (!user) {
       Swal.fire({
         title: "Please Login now",
@@ -64,21 +77,35 @@ const bookData = ['sjsjf', '655465asf']
       const saveData = { id: id, userEmail: user?.email };
       // console.log(saveData);
       axios
-        .post(`${import.meta.env.VITE_LOCALHOST_KEY}/bookmark`, { saveData })
+        .post(`${import.meta.env.VITE_LOCALHOST_KEY}/booked`, { saveData })
         .then((response) => {
-          toast.success('Successfully Added!')
+          toast.success("Successfully Added!");
         });
+      refetch();
     }
   };
+
+  const handleAddToFavorite = (id) => {
+    let favoriteClasses = [...favorites];
+
+    if (!favoriteClasses.includes(id)) {
+      favoriteClasses.push(id);
+    }
+
+    localStorage.setItem("favoriteClass", JSON.stringify(favoriteClasses));
+    setFavorites(favoriteClasses);
+    toast.success('Added to favorites!');
+  };
+
   return (
     <Content>
-      <div className="pb-10 pt-2">
+      <div className="pb-10 pt-2 text-gray-100">
         <h2 className="text-center text-3xl font-semibold pb-5">
           Course Details: {data?.courseName}
         </h2>
         {isLoading && <Loader />}
-        <section className="w-1/2 mx-auto">
-          <div className="overflow-hidden rounded-lg">
+        <section className="w-2/3 mx-auto p-10 rounded-lg  border-gray-400 border">
+          <div className="overflow-hidden  rounded-lg">
             <img
               className=" w-full rounded-lg h-[200px] transform hover:scale-110 duration-200"
               src={data?.courseImage}
@@ -150,14 +177,30 @@ const bookData = ['sjsjf', '655465asf']
                   <span> {instructorData?.instructorName}</span>
                 </p>
               </div>
-              <button  
-              onClick={() => handleBookMark(data?._id)}
-              className="secondary-btn flex items-center gap-1 px-5"
-              disabled={isBookmarked}
-            >
-              <FaCartPlus />
-              Add Cart
-            </button>
+              <div className="flex items-center gap-1">
+                <button
+                  onClick={() => handleBooked(data?._id)}
+                  className="secondary-btn flex items-center gap-1 px-5"
+                  disabled={isBooked}
+                >
+                  <FaCartPlus />
+                  Add Cart
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleAddToFavorite(data?._id)}
+                  className={`flex border border-gray-100 rounded-lg items-center px-2 py-1 space-x-1 ${
+                    isFavorite ? "your-additional-styles-for-favorite" : ""
+                  }`}
+                >
+                  <FiHeart
+                    className={`w-4 h-4 ${
+                      isFavorite ? "text-red-500 fill-current" : ""
+                    }`}
+                  />
+                  <span>Add to favorites</span>
+                </button>
+              </div>
             </div>
           </div>
         </section>

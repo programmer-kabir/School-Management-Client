@@ -7,9 +7,10 @@ import {
   FaInstagram,
   FaTwitter,
 } from "react-icons/fa";
+import NewsLetter from "../../../Component/Home/NewsLetter/NewsLetter";
 const Footer = () => {
   return (
-    <div className="">
+    <div className="pt-10">
       <footer className="bg-gray-800">
         <div className="mx-auto  px-4 py-16 sm:px-6 lg:px-8">
           <div className="mt-8 grid  justify-center grid-cols-2 lg:grid-cols-5 gap-8  lg:mt-0  lg:gap-y-16">
@@ -75,15 +76,18 @@ const Footer = () => {
             </div>
 
             <div className="">
-              <p className="font-semibold text-base text-white">Downloads</p>
+              <p className="font-semibold text-base text-white">News Later</p>
 
               <ul className="mt-6 space-y-4 text-sm">
-                <li className="text-gray-400">
+                {/* <li className="text-gray-400">
                   <Link> Marketing Calendar</Link>
                 </li>
 
                 <li className="text-gray-400">
                   <Link> SEO Info graphics</Link>
+                </li> */}
+                <li>
+                  <NewsLetter />
                 </li>
               </ul>
             </div>

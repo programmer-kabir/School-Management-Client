@@ -6,9 +6,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import "./styles.css";
-
+// 
 // import required modules
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 const slidesData = [
   {
     image: "https://i.ibb.co/mSS1wW7/First.jpg",
@@ -49,20 +49,49 @@ const slidesData = [
 ];
 const Banner = () => {
   return (
-    <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+    <div>
+      <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
       {slidesData.map((slide, index) => (
-        <SwiperSlide key={index}>
-          <img src={slide.image} alt={slide.title} />
-          <div className="absolute space-y-2 w-11/12 mx-auto p-7 text-start text-white md:pr-[700px]">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl">{slide.title}</h2>
-            <p className="text-sm md:text-base lg:text-lg">
-              {slide.description}
-            </p>
-            <button className="primary-btn text-white">Details</button>
+        <>
+          <SwiperSlide key={index} className="relative">
+            <img src={slide.image} alt={slide.title} />
+            <div className="absolute space-y-2 w-11/12 mx-auto p-7 text-start text-white md:pr-[700px]">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl">
+                {slide.title}
+              </h2>
+              <p className="text-sm md:text-base lg:text-lg">
+                {slide.description}
+              </p>
+              <button className="primary-btn text-white">Details</button>
+            </div>
+          </SwiperSlide>
+
+          <div className="absolute bottom-0 w-full z-10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              viewBox="0 24 150 28"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <path
+                  id="gentle-wave"
+                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+                />
+              </defs>
+              <g>
+                <use xlinkHref="#gentle-wave" x="50" y="0" fill="#011e30" />
+              </g>
+              <g>
+                <use xlinkHref="#gentle-wave" x="50" y="6" fill="#1d313e" />
+              </g>
+            </svg>
           </div>
-        </SwiperSlide>
+        </>
       ))}
     </Swiper>
+
+    </div>
   );
 };
 

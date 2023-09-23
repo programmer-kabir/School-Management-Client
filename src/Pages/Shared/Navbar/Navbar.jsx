@@ -39,8 +39,8 @@ const Navbar = () => {
       text: "Class",
     },
     {
-      to: "/Appointment",
-      text: "Appointment",
+      to: "/favorite",
+      text: "Favorite",
     },
     ...(user
       ? [
@@ -61,7 +61,7 @@ const Navbar = () => {
   return (
     <div>
       <nav
-       className={`w-[100%] fixed z-50 mx-auto ${location.pathname === "/" ? (scrolled ? "bg-gray-800" : "") : "bg-gray-800"} text-black`}
+       className={`w-[100%] fixed z-50 mx-auto ${location.pathname === "/" ? (scrolled ? "bg-[#10202B]" : "") : "bg-[#10202B]"} text-black`}
       >
         <div className=" mx-auto ">
           <div className="flex z-50 px-8  justify-between items-center text-white">

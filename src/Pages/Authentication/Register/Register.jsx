@@ -188,7 +188,7 @@ const Register = () => {
                   onChange={(e) => setIsCheckboxChecked(e.target.checked)}
                 />
                 <span className="text-white font-medium">
-                  I agreement your Register
+                I agree with <span className="font-semibold text-blue-600 underline"><Link to={'/terms'}>terms and condition</Link></span>
                 </span>
               </div>
               <div className="px-4 pb-2 pt-4">

@@ -41,9 +41,13 @@ const Booked = () => {
 
     return `${words.slice(0, 25).join(" ")}`;
   };
+
+  const handleDelete = (id) =>{
+    console.log(id);
+  }
   return (
     <div className="pt-16 w-full ">
-      <div className="p-6  sm:p-10 dark:bg-gray-800 dark:text-gray-100">
+      <div className="p-6  sm:p-10 text-gray-100">
         <h2 className="text-xl font-semibold">Your cart</h2>
         {filteredClasses.map((classes) => (
           <div>
@@ -75,18 +79,13 @@ const Booked = () => {
                       <div className="flex text-sm divide-x">
                         <button
                           type="button"
+                          onClick={()=>handleDelete(classes._id)}
                           className="flex items-center px-2 py-1 pl-0 space-x-1"
                         >
                           <RiDeleteBin6Line className="w-4 h-4 fill-current" />
                           <span>Remove</span>
                         </button>
-                        <button
-                          type="button"
-                          className="flex items-center px-2 py-1 space-x-1"
-                        >
-                          <FiHeart className="w-4 h-4" />
-                          <span>Add to favorites</span>
-                        </button>
+                        
                       </div>
                     </div>
                   </div>

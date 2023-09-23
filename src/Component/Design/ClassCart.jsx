@@ -6,7 +6,7 @@ import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
 const ClassCart = ({ Class, link }) => {
-  console.log(link);
+  // console.log(link);
   return (
     <div>
       <section className="flex flex-col h-[365px] border border-cyan-600 rounded-lg px-1 py-1">
@@ -19,7 +19,7 @@ const ClassCart = ({ Class, link }) => {
             />
           </div>
 
-          <div className="pr-5  pt-2">
+          <div className="pr-5 text-gray-100 pt-2">
             <h2 className="text-base font-semibold">{Class?.courseName}</h2>
             <p className="font-semibold py-1">
               Enroll Student: {Class?.enrollStudents}
@@ -34,9 +34,9 @@ const ClassCart = ({ Class, link }) => {
                   readonly
                   className="text-black"
                   placeholderRating={Class?.ratting}
-                  emptySymbol={<FaRegStar />}
-                  placeholderSymbol={<FaStar color="black" />}
-                  fullSymbol={<FaStar color="black" />}
+                  emptySymbol={<FaRegStar color="yellow"/>}
+                  placeholderSymbol={<FaStar color="yellow" />}
+                  fullSymbol={<FaStar color="yellow" />}
                 />
               </div>
             </div>

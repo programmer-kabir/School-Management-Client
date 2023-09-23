@@ -4,7 +4,9 @@
 
 :root {
   font-family: "Montserrat", sans-serif;
+  background-color: #1D313E;
 }
+
 .primary-btn {
   @apply px-6 py-1 rounded-md bg-cyan-500 text-black border border-cyan-500 font-medium hover:text-white hover:bg-transparent;
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease,
@@ -15,46 +17,13 @@
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease,
     color 0.3s ease;
 }
-.background {
-  background-image: url("./assets/Image/light_submit_2-[Converted].png");
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-@keyframes upDownLeftRightAnimation {
-  0% {
-    transform: translateY(0) translateX(0);
-  }
 
-  25% {
-    transform: translateY(-10px) translateX(0);
-  }
 
-  /* Moves Up */
-  50% {
-    transform: translateY(10px) translateX(0);
-  }
-
-  /* Moves Down */
-  75% {
-    transform: translateY(0) translateX(-10px);
-  }
-
-  /* Moves Left */
-  100% {
-    transform: translateY(0) translateX(10px);
-  }
-}
-.style {
-  animation: upDownLeftRightAnimation 5s infinite;
-}
-
-.bg-image {
+/* .bg-image {
   background-image: url("https://i.ibb.co/6Yh2jHb/user-2.png");
   background-size: cover;
   background-repeat: no-repeat;
-}
+} */
 
 .btn {
   background: #000;
@@ -91,4 +60,18 @@
 
 .secondary-btn[disabled] {
   cursor: not-allowed;
+}
+
+.fromButton {
+  padding: 8px 0px;
+  width: 100%;
+  border-radius: 8px;
+  color: white;
+  transition: background-color 0.3s ease, font-weight 0.3s ease, border 0.3s ease;
+}
+
+.fromButton:hover {
+  background-color: rgba(113, 39, 186, 1);
+  font-weight: 500;
+  border: 2px solid purple;
 }

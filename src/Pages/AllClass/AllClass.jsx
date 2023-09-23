@@ -17,18 +17,12 @@ const AllClass = () => {
   }, []);
   return (
     <Content>
-      <div className="pt-10">
-        <Title
-          mainTitle={"All Class Are Here"}
-          subTitle={
-            "We are hopeful that we can give good classes, this is our challenge and the challenge of our instructors"
-          }
-        />
+      <div className="">
         <div className="grid lg:grid-cols-3 md:grid-cols-3 xl:grid-cols-4 grid-cols-1 gap-5">
           {isLoading && <Loader />}
           {classData &&
             classData.map((Class) => (
-              <ClassCart Class={Class}/>
+              <ClassCart key={Class._id} Class={Class}/>
               ))}
         </div>
       </div>

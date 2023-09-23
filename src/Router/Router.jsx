@@ -16,6 +16,8 @@ import BookMarkDetails from "../Component/Dashboard/BookMark/BookMarkDetails";
 import Booked from "../Pages/Dashboard/User/BookMark/Booked";
 import Payment from "../Pages/Dashboard/User/Payment/Payment";
 import EnrolCourse from "../Pages/Dashboard/User/EnrolCourse/EnrolCourse";
+import TermsAndConditions from "../Component/Home/TermsAndConditions";
+import Favorite from "../Pages/Favorite/Favorite";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
         element: <AllClass />,
       },
       {
+        path: "/favorite",
+        element: <Favorite />,
+      },
+      {
         path: "/all-class/:id",
         element: <ClassDetails />,
         loader:({params}) => fetch(`${import.meta.env.VITE_LOCALHOST_KEY}/all-class/${params.id}`)
@@ -43,6 +49,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
+      {
+        path:'/terms',
+        element:<TermsAndConditions />
+      }
     ],
   },
   {

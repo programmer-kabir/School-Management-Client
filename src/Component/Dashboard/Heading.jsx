@@ -36,7 +36,7 @@ const Heading = ({ currentUserId }) => {
   return (
     <div className="w-[75%] ml-auto z-auto">
       <div
-        className="flex z-10 bg-white fixed w-[75%]  items-center px-5 py-3 justify-between"
+        className="flex z-10 bg-[#10202B] fixed w-[75%] text-gray-100  items-center px-5 py-3 justify-between"
         style={{
           boxShadow:
             "rgba(0, 0, 0, 0.1) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.1) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
@@ -47,7 +47,7 @@ const Heading = ({ currentUserId }) => {
           <input
             type="text"
             name=""
-            className="w-full focus:outline-none text-base"
+            className="w-full text-gray-100 focus:outline-none bg-[#10202B] text-base"
             id=""
             placeholder="Type to search..."
           />
