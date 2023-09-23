@@ -1,10 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUClass } from "../Redux/Class/ClassSlice";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaCartPlus } from "react-icons/fa";
-
+import toast from 'react-hot-toast'
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../Component/Hooks/useAuth";
+import axios from "axios";
+import useBookMark from "../../Component/Hooks/useBookMark";
 const Favorite = () => {
+  const [bookData, refetch] = useBookMark();
+  const [favorites, setFavorites] = useState([]);
+  const navigate = useNavigate()
+  const {user} = useAuth()
   const { isLoading, class: classData } = useSelector((state) => state.class);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -15,14 +24,57 @@ const Favorite = () => {
   const favoriteClasses = classData.filter((data) =>
     FavoriteData.includes(data._id)
   );
-//   console.log(favoriteClasses);
+  useEffect(() => {
+    const rawData = localStorage.getItem("favoriteClass");
+    if (rawData) {
+      setFavorites(JSON.parse(rawData));
+    }
+  }, []);
+  const isClassBooked = (classId) => {
+    return bookData.some(book => book.id === classId);
+  };
+  
+  const handleDelete = (id) => {  
+    const updatedArray = favorites.filter(storedId => storedId !== id);
+    setFavorites(updatedArray);  // This will re-render your component
+    localStorage.setItem("favoriteClass", JSON.stringify(updatedArray));
+    toast.success('Successfully deleted!');
+  };
+  
+  const handleAddToCart = id =>{
+    console.log(id);
+    if (!user) {
+      Swal.fire({
+        title: "Please Login now",
+        confirmButtonText: "Login",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login");
+        }
+      });
+    } else {
+      const saveData = { id: id, userEmail: user?.email };
+      
+      axios
+        .post(`${import.meta.env.VITE_LOCALHOST_KEY}/booked`, { saveData })
+        .then((response) => {
+          toast.success("Successfully Added!");
+          const updatedFavorites = favorites.filter(storedId => storedId !== id);
+          setFavorites(updatedFavorites); 
+          localStorage.setItem("favoriteClass", JSON.stringify(updatedFavorites));
+        });
+      refetch();
+    }
+  }
   return (
     <div>
       <div className="pt-16  w-2/3 mx-auto">
         <div className="p-6  sm:p-10 text-gray-100">
-          <h2 className="text-xl font-semibold">Your Favorite List : {favoriteClasses.length}</h2>
+          <h2 className="text-xl font-semibold">
+            Your Favorite List : {favoriteClasses.length}
+          </h2>
           {favoriteClasses.map((classes) => (
-            <div>
+            <div key={classes._id}>
               <div className="flex flex-col space-y-4 ">
                 <ul className="flex flex-col divide-y divide-gray-700">
                   <li className="flex flex-col py-4 sm:flex-row sm:justify-between">
@@ -50,6 +102,7 @@ const Favorite = () => {
                         </div>
                         <div className="flex text-sm divide-x">
                           <button
+                            onClick={() => handleDelete(classes._id)}
                             type="button"
                             className="flex items-center px-2 py-1 pl-0 space-x-1"
                           >
@@ -57,7 +110,9 @@ const Favorite = () => {
                             <span>Remove</span>
                           </button>
                           <button
+                          onClick={()=>handleAddToCart(classes._id)}
                             type="button"
+                            disabled={isClassBooked(classes._id)}
                             className="flex gap-1 items-center px-2 py-1 pl-2"
                           >
                             <FaCartPlus className="w-4 h-4 fill-current" />

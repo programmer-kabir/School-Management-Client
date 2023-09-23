@@ -234,13 +234,14 @@ const BookMarkDetails = () => {
               Back
               <span className="sr-only sm:not-sr-only">to shop</span>
             </button>
+            <Link>
             <button
               type="button"
               className="px-6 py-2 border rounded-md dark:bg-violet-400 dark:text-gray-900 dark:border-violet-400"
             >
-              <span className="sr-only sm:not-sr-only">Continue to</span>
-              Checkout
-            </button>
+              <span className="sr-only sm:not-sr-only">Continue to </span>
+               Checkout
+            </button></Link>
           </div>
         </div>
     </div>

@@ -39,7 +39,8 @@ const router = createBrowserRouter([
       {
         path: "/all-class/:id",
         element: <ClassDetails />,
-        loader:({params}) => fetch(`${import.meta.env.VITE_LOCALHOST_KEY}/all-class/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_LOCALHOST_KEY}/all-class/${params.id}`),
       },
       {
         path: "/login",
@@ -50,14 +51,18 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path:'/terms',
-        element:<TermsAndConditions />
-      }
+        path: "/terms",
+        element: <TermsAndConditions />,
+      },
     ],
   },
   {
     path: "dashboard",
-    element: <PrivateRoute><Dashboard /></PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "profile/:id",
@@ -76,14 +81,14 @@ const router = createBrowserRouter([
         element: <Booked />,
       },
       {
-        path:'booked/payment',
-        element:<Payment />
+        path: "payment",
+        element: <Payment />,
+        
       },
-    {
-      path:"enrol-course",
-      element:<EnrolCourse />
-    }
-
+      {
+        path: "enrol-course",
+        element: <EnrolCourse />,
+      },
     ],
   },
 ]);

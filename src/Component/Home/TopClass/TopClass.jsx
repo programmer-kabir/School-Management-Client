@@ -6,6 +6,7 @@ import { fetchUClass } from "../../../Pages/Redux/Class/ClassSlice";
 import { AiFillDollarCircle } from "react-icons/ai";
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
+import Loader from "../../Loader/Loader";
 
 const TopClass = () => {
   const {
@@ -28,6 +29,7 @@ const TopClass = () => {
         }
       />
       <div className="grid grid-cols-4 gap-5">
+        {isLoading && <Loader />}
         {first10ClassData.map((data) => (
           <div className="">
             <div className=" rounded-lg shadow-md bg-[#011E30] text-gray-100">
