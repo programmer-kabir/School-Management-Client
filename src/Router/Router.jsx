@@ -18,11 +18,14 @@ import Payment from "../Pages/Dashboard/User/Payment/Payment";
 import EnrolCourse from "../Pages/Dashboard/User/EnrolCourse/EnrolCourse";
 import TermsAndConditions from "../Component/Home/TermsAndConditions";
 import Favorite from "../Pages/Favorite/Favorite";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PaymentSuccessfully from "../Pages/Dashboard/User/Payment/PaymentSuccessfully";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement:<ErrorPage />,
     children: [
       {
         path: "/",
@@ -89,6 +92,10 @@ const router = createBrowserRouter([
         path: "enrol-course",
         element: <EnrolCourse />,
       },
+      {
+        path:"payment/successfully/:tran_id",
+        element:<PaymentSuccessfully />
+      }
     ],
   },
 ]);

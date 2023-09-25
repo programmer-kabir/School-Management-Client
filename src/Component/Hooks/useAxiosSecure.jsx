@@ -2,14 +2,14 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import useAuth from "./useAuth";
-
+const axiosSecure = axios.create({
+  baseURL: `${import.meta.env.VITE_LOCALHOST_KEY}`,
+});
 const useAxiosSecure = () => {
   const { logOut } = useAuth();
   // console.log(logOut);
   const navigate = useNavigate();
-  const axiosSecure = axios.create({
-    baseURL: `${import.meta.env.VITE_LOCALHOST_KEY}`,
-  });
+
 
   useEffect(() => {
     axiosSecure.interceptors.request.use((config) => {

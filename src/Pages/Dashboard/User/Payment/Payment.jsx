@@ -1,150 +1,110 @@
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
-
-const Payment = () => {
-  const [divisions, setDivisions] = useState([]);
-  const [districts, setDistricts] = useState([]);
-  const [upaZila, setUpaZila] = useState([]);
-  const [selectedDivision, setSelectedDivision] = useState("");
-  const [selectedDistricts, setSelectedDistricts] = useState("");
-  const [filteredDistricts, setFilteredDistricts] = useState([]);
-  const [filteredUpaZila, setFilteredUpaZila] = useState([]);
-  // Fetch divisions
+import useAxiosSecure from "../../../../Component/Hooks/useAxiosSecure";
+import useAuth from "../../../../Component/Hooks/useAuth";
+import toast from "react-hot-toast";
+import axios from "axios";
+const Payment = ({ price, selectedClass, bookedId,onPaymentSuccess  }) => {
+  // console.log(price);
+  const stripe = useStripe();
+  const elements = useElements();
+  const { user } = useAuth();
+  const [cardError, setCardError] = useState("");
+  const [axiosSecure] = useAxiosSecure();
+  const [clientSecret, setClientSecret] = useState("");
+  const [processing, setProcessing] = useState(false);
+  const [transactionId, seTransactionId] = useState("");
   useEffect(() => {
-    // Assuming the fetch methods are similar to your previous example
-    fetch("/division.json")
-      .then((res) => res.json())
-      .then((data) => setDivisions(data.divisions));
-
-    fetch("/districts.json")
-      .then((res) => res.json())
-      .then((data) => setDistricts(data.districts));
-
-    fetch("/upzilahs.json")
-      .then((res) => res.json())
-      .then((data) => setUpaZila(data.upazilas));
+    axiosSecure.post("/create-payment-intent", { price }).then((res) => {
+      // console.log(res.data.clientSecret);
+      setClientSecret(res.data.clientSecret);
+    });
   }, []);
-
-  useEffect(() => {
-    if (selectedDivision) {
-      const relevantDistricts = districts.filter(
-        (district) => district.division_id === selectedDivision
-      );
-      setFilteredDistricts(relevantDistricts);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!stripe || !elements) {
+      return;
     }
-  }, [selectedDivision, districts]);
-
-  useEffect(() => {
-    if (selectedDistricts) {
-      const relevantUpZila = upaZila.filter(
-        (upaZilaes) => upaZilaes.district_id === selectedDistricts
-      );
-      setFilteredUpaZila(relevantUpZila);
+    const card = elements.getElement(CardElement);
+    if (card == null) {
+      return;
     }
-  }, [selectedDistricts, upaZila]);
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: "card",
+      card,
+    });
+    if (error) {
+      console.log("[error]", error);
+      setCardError(error.message);
+    } else {
+      // console.log("[PaymentMethod]", paymentMethod);
+      setCardError("");
+    }
+    setProcessing(true);
+    const { paymentIntent, error: confirmError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            name: user?.displayName || "anonymous",
+            email: user?.email || "anonymous",
+          },
+        },
+      });
+    if (confirmError) {
+      console.log(confirmError);
+    }
+    console.log("paymentIntent", paymentIntent);
+    setProcessing(false);
+    if (paymentIntent?.status === "succeeded") {
+      seTransactionId(paymentIntent.id);
 
+      // save
+      const payment = {
+        email: user?.email,
+        transactionId: paymentIntent.id,
+        price,
+        bookedId,
+        date: new Date(),
+        classId: selectedClass?._id,
+      };
+      axios
+        .post(`${import.meta.env.VITE_LOCALHOST_KEY}/payments`, payment)
+        // console.log(object);
+        .then((res) => {
+          if (res.data.insertResult) {
+            toast.success("payment successfully done");
+            onPaymentSuccess();
+          }
+        });
+    }
+  };
+  console.log(bookedId?._id);
   return (
-    <div className="pt-20 mx-16">
-      <section class="relative py-10 bg-gray-900 sm:py-16 lg:py-24">
-        <div class="absolute inset-0">
-          <img
-            class="object-cover w-full h-full"
-            src="https://images.unsplash.com/photo-1596003906949-67221c37965c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZ3JhbW1lcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
-            alt=""
-          />
-        </div>
-        <div class="absolute inset-0 bg-gray-900/20"></div>
-
-        <div class="relative max-w-lg px-4 mx-auto sm:px-0">
-          <div class="overflow-hidden bg-white rounded-md shadow-md">
-            <div class="px-4 py-6 sm:px-8 sm:py-7">
-              <div class="text-center">
-                <h2 class="text-3xl font-bold text-gray-900">
-                  Check Out Page...
-                </h2>
-              </div>
-
-              <form action="#" method="POST" class="mt-8">
-                <div class="space-y-5">
-                  <div className="w-full px-4">
-                    <label className="mb-3 block text-base font-medium text-black">
-                      Division
-                    </label>
-                    <div className="relative z-20 bg-white">
-                      <select
-                        className="relative z-20 w-full appearance-none rounded-md border"
-                        onChange={(e) => setSelectedDivision(e.target.value)}
-                      >
-                        <option value="">Select a Division</option>
-                        {divisions.map((i) => (
-                          <option key={i.id} value={i.id}>
-                            {i.name}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                  {/*  */}
-                  <div className="w-full px-4">
-                    <label className="mb-3 block text-base font-medium text-black">
-                      Up Zila
-                    </label>
-                    <div className="relative z-20 bg-white">
-                      <select
-                        onChange={(e) => setSelectedDistricts(e.target.value)}
-                        className="relative z-20 w-full appearance-none rounded-md border"
-                      >
-                        <option value="">Select a District</option>
-                        {filteredDistricts.map((i) => (
-                          <option key={i.id} value={i.id}>
-                            {i.name}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* upa */}
-                  <div className="w-full px-4">
-                    <label className="mb-3 block text-base font-medium text-black">
-                      District
-                    </label>
-                    <div className="relative z-20 bg-white">
-                      <select className="relative z-20 w-full appearance-none rounded-md border">
-                        <option value="">Select a District</option>
-                        {filteredUpaZila.map((i) => (
-                          <option key={i.id} value={i.id}>
-                            {i.name}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </form>
-
-              <p class="max-w-xs mx-auto mt-5 text-sm text-center text-gray-600">
-                This site is protected by reCAPTCHA and the Google{" "}
-                <a
-                  href="#"
-                  title=""
-                  class="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700"
-                >
-                  Privacy Policy
-                </a>{" "}
-                &
-                <a
-                  href="#"
-                  title=""
-                  class="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700"
-                >
-                  Terms of Service
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+    <>
+      <form onSubmit={handleSubmit}>
+        <CardElement
+          options={{
+            style: {
+              base: {
+                fontSize: "16px",
+                color: "#424770",
+                "::placeholder": {
+                  color: "#aab7c4",
+                },
+              },
+              invalid: {
+                color: "#9e2146",
+              },
+            },
+          }}
+        />
+        <button type="submit" disabled={!stripe || !clientSecret || processing}>
+          Pay
+        </button>
+      </form>
+      {cardError && <p>{cardError}</p>}
+    </>
   );
 };
 

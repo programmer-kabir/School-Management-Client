@@ -5,7 +5,7 @@ import { MdDescription } from "react-icons/md";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
-const ClassCart = ({ Class, link }) => {
+const ClassCart = ({ Class }) => {
   // console.log(link);
   return (
     <div>
@@ -44,7 +44,7 @@ const ClassCart = ({ Class, link }) => {
         </article>
         <div className="mt-auto">
           <Link to={Class?._id}>
-            <button className="secondary-btn w-full text-center justify-center flex items-center gap-1">
+            <button  disabled={Class?.sits === 0} className="secondary-btn w-full text-center justify-center flex items-center gap-1">
               <MdDescription size={20} />
               Details
             </button>
