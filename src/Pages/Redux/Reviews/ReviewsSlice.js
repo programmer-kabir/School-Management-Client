@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios'
 export const fetchReviews = createAsyncThunk("reviews/fetchUReviews", async()=>{
-    const res = await axios.get('http://localhost:5000/reviews')
+    const res = await axios.get('https://server-kabi-r.vercel.app/reviews')
     return res.data
 });
 const reviewSlice = createSlice({

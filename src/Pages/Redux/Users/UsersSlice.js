@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async()=>{
-    const res = await axios.get('http://localhost:5000/users')
+    const res = await axios.get('https://server-kabi-r.vercel.app/users')
     return res.data
 });
 const usersSlice = createSlice({

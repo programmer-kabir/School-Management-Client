@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios'
 export const fetchUClass = createAsyncThunk("class/fetchUClass", async()=>{
-    const res = await axios.get('http://localhost:5000/all-class')
+    const res = await axios.get('https://server-kabi-r.vercel.app/all-class')
     return res.data
 });
 const classSlice = createSlice({

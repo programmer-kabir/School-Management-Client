@@ -59,7 +59,7 @@ const Profile = () => {
     };
     try {
       const response = await fetch(
-        `http://localhost:5000/users/${matchedUser._id}`,
+        `https://server-kabi-r.vercel.app/users/${matchedUser._id}`,
         {
           method: "PUT",
           headers: {

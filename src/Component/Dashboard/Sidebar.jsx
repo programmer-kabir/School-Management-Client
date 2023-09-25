@@ -50,7 +50,7 @@ const Sidebar = () => {
         </div>
         {/* Left side Content */}
         <div className="px-5 pt-10 space-y-3">
-          <NavLink
+          {/* <NavLink
             to="/dashboard"
             className={({ isActive }) =>
               `font-semibold transition-all disabled:opacity-50 hover:bg-gray-700 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg  text-white active:opacity-[0.85] w-full flex items-center gap-4 px-5 capitalize ${
@@ -60,7 +60,7 @@ const Sidebar = () => {
           >
             <ImHome className="w-5 h-5" />
             <span className="">Dashboard</span>
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to={`../dashboard/profile/${currentUserId}`}
             className={({ isActive }) =>
