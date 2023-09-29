@@ -18,7 +18,7 @@ const TopClass = () => {
   useEffect(() => {
     dispatch(fetchUClass());
   }, []);
-  const first10ClassData = classData.slice(11, 19);
+  const first10ClassData = classData.slice(3, 11);
   console.log(first10ClassData);
   return (
     <Content>
@@ -33,7 +33,7 @@ const TopClass = () => {
         {first10ClassData.map((data) => (
           <div className="">
             <div className=" rounded-lg shadow-md bg-[#011E30] text-gray-100">
-              <div className="space-y-4 h-[350px]">
+              <div className="space-y-4 h-[380px]">
                 <div className="space-y-2">
                   <img
                     src={data.courseImage}

@@ -20,17 +20,13 @@ import TermsAndConditions from "../Component/Home/TermsAndConditions";
 import Favorite from "../Pages/Favorite/Favorite";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PaymentSuccessfully from "../Pages/Dashboard/User/Payment/PaymentSuccessfully";
-
+import AdminDashboard from "../Pages/Dashboard/Admin/AdminDashboard";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
     errorElement:<ErrorPage />,
     children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
       {
         path: "/all-class",
         element: <AllClass />,
@@ -68,6 +64,10 @@ const router = createBrowserRouter([
     ),
     children: [
       {
+        path:'/dashboard/home',
+        element: <AdminDashboard />
+      },
+      {
         path: "profile/:id",
         element: <Profile />,
       },
@@ -85,8 +85,7 @@ const router = createBrowserRouter([
       },
       {
         path: "payment",
-        element: <Payment />,
-        
+        element: <Payment />,        
       },
       {
         path: "enrol-course",

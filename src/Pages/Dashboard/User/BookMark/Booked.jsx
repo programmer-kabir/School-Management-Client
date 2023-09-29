@@ -11,6 +11,7 @@ import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Payment from "../Payment/Payment";
+import { useQuery } from "@tanstack/react-query";
 const stripePromise = loadStripe(import.meta.env.VITE_PK_KEY);
 const Booked = () => {
   const [booked, refetch] = useBookMark();
@@ -23,18 +24,48 @@ const Booked = () => {
   useEffect(() => {
     dispatch(fetchUClass());
   }, []);
-//   const excludedClasses = classData.filter((classItem) => 
-//     !bookMarkIds.includes(classItem._id)
-// );
+  //   const excludedClasses = classData.filter((classItem) =>
+  //     !bookMarkIds.includes(classItem._id)
+  // );
 
   const filteredClasses = classData.filter((classItem) =>
     bookMarkIds.includes(classItem._id)
   );
-  const price = selectedClass?.price
+  console.log(filteredClasses);
+  const price = selectedClass?.price;
 
-const bookedId = booked.find (i => i.id === selectedClass?._id)
-console.log(bookedId?._id);
-// console.log(selectedClass);
+  const bookedId = booked.find((i) => i.id === selectedClass?._id);
+  console.log(bookedId?._id);
+  const {
+    data: enrolled = [],
+    isLoading: loading,
+    isError,
+  } = useQuery(["enrolled"], async () => {
+    const res = await fetch(
+      `${import.meta.env.VITE_LOCALHOST_KEY}/payment?email=${user.email}`
+    );
+    if (!res.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return res.json();
+  });
+  const getMatchingIDs = () => {
+    let matchingIDs = [];
+
+    enrolled.forEach((payment) => {
+      if (
+        payment.bookedId &&
+        filteredClasses.some((bookmark) => bookmark._id === payment.bookedId.id)
+      ) {
+        matchingIDs.push(payment.bookedId.id);
+      }
+    });
+
+    return matchingIDs;
+  };
+
+  const result = getMatchingIDs();
+  console.log(result);
 
   const handleDelete = (id) => {
     console.log(id);
@@ -60,6 +91,7 @@ console.log(bookedId?._id);
   const handlePaymentSuccess = () => {
     setShowModal(false);
   };
+  console.log(filteredClasses);
   return (
     <div className="pt-16 w-full ">
       <div className="p-6  sm:p-10 text-gray-100">
@@ -131,12 +163,7 @@ console.log(bookedId?._id);
                     >
                       Back
                       <span className="sr-only sm:not-sr-only"> to shop</span>
-                    </button> 
-                    {/* <div className="w-full">
-                   <Elements stripe={stripePromise}>
-                      <Payment />
-                    </Elements>
-                   </div> */}
+                    </button>
                     <button
                       type="button"
                       onClick={() => {
@@ -144,6 +171,7 @@ console.log(bookedId?._id);
                         setShowModal(true);
                       }}
                       className="px-6 py-2 border rounded-md dark:bg-violet-400 dark:text-gray-900 dark:border-violet-400"
+                      disabled={result.includes(classes._id)}
                     >
                       <span className="sr-only sm:not-sr-only">
                         Continue to
@@ -169,7 +197,12 @@ console.log(bookedId?._id);
                                 <div>
                                   <div className="w-full">
                                     <Elements stripe={stripePromise}>
-                                      <Payment bookedId={bookedId} price={price} onPaymentSuccess={handlePaymentSuccess} selectedClass={selectedClass}/>
+                                      <Payment
+                                        bookedId={bookedId}
+                                        price={price}
+                                        onPaymentSuccess={handlePaymentSuccess}
+                                        selectedClass={selectedClass}
+                                      />
                                     </Elements>
                                   </div>
                                 </div>

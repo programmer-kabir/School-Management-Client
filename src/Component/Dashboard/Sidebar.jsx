@@ -10,7 +10,7 @@ import { loadUsersData, usersData } from "../Hooks/userData";
 import useAuth from "../Hooks/useAuth";
 import { FaBookmark } from "react-icons/fa";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
-import logo from '../../assets/Image/logo.gif'
+import logo from "../../assets/Image/logo.gif";
 const Sidebar = () => {
   const [isAdmin] = useAdmin();
   // console.log(isAdmin);
@@ -61,20 +61,20 @@ const Sidebar = () => {
             <ImHome className="w-5 h-5" />
             <span className="">Dashboard</span>
           </NavLink> */}
-          <NavLink
-            to={`../dashboard/profile/${currentUserId}`}
-            className={({ isActive }) =>
-              `font-semibold transition-all disabled:opacity-50 hover:bg-gray-700 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg  text-white active:opacity-[0.85] w-full flex items-center gap-4 px-5 capitalize ${
-                isActive ? activeLinkClass : ""
-              }`
-            }
-          >
-            <FaUser className="w-5 h-5" />
-            <span>Profile</span>
-          </NavLink>
 
           {isAdmin && (
             <>
+              <NavLink
+                to="home"
+                className={({ isActive }) =>
+                  `font-semibold transition-all disabled:opacity-50 hover:bg-gray-700 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg  text-white active:opacity-[0.85] w-full flex items-center gap-4 px-5 capitalize ${
+                    isActive ? activeLinkClass : "text-white"
+                  }`
+                }
+              >
+                <GiTeacher className="w-5 h-5" />
+                <span>Dashboard</span>
+              </NavLink>
               <NavLink
                 to="instructor-Details"
                 className={({ isActive }) =>
@@ -133,6 +133,17 @@ const Sidebar = () => {
               >
                 <IoCheckmarkDoneOutline className="w-5 h-5" />
                 <span>Enrol Course</span>
+              </NavLink>
+              <NavLink
+                to={`../dashboard/profile/${currentUserId}`}
+                className={({ isActive }) =>
+                  `font-semibold transition-all disabled:opacity-50 hover:bg-gray-700 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg  text-white active:opacity-[0.85] w-full flex items-center gap-4 px-5 capitalize ${
+                    isActive ? activeLinkClass : ""
+                  }`
+                }
+              >
+                <FaUser className="w-5 h-5" />
+                <span>Profile</span>
               </NavLink>
             </>
           )}
