@@ -75,18 +75,12 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="">
+            <div className="w-full">
               <p className="font-semibold text-base text-white">News Later</p>
 
-              <ul className="mt-6 space-y-4 text-sm">
-                {/* <li className="text-gray-400">
-                  <Link> Marketing Calendar</Link>
-                </li>
-
-                <li className="text-gray-400">
-                  <Link> SEO Info graphics</Link>
-                </li> */}
-                <li>
+              <ul className="mt-6 w-full space-y-4 text-sm">
+                
+                <li className="w-full">
                   <NewsLetter />
                 </li>
               </ul>

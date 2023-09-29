@@ -12,7 +12,7 @@ const Faq = () => {
             "Sagittis tempor donec id vestibulum viverra. Neque condimentum primis orci at lacus amet bibendum."
           }
         />
-        <div className="container flex flex-col justify-center p-4 mx-auto md:p-8"> 
+        <div className="container flex flex-col justify-center p-6 mx-auto md:p-8"> 
           <div className="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-700">
             <details>
               <summary className="py-2 outline-none font-semibold text-xl cursor-pointer focus:underline">

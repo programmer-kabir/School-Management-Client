@@ -74,10 +74,10 @@ const Favorite = () => {
   };
   return (
     <div>
-      <div className="pt-16  w-2/3 mx-auto">
+      <div className="pt-16  md:w-2/3 mx-auto">
         <div className="p-6  sm:p-10 text-gray-100">
           {favoriteClasses.length === 0 && (
-            <div className="flex mx-auto gap-2 items-center bg-[#10202B] border border-teal-100 w-1/2 px-5 text-center py-5 rounded-xl">
+            <div className="flex mx-auto gap-2 items-center bg-[#10202B] border border-teal-100 md:w-1/2 px-5 text-center py-5 rounded-xl">
               <AiOutlineExclamationCircle />{" "}
               <span>You did not book any course yet!</span>
             </div>

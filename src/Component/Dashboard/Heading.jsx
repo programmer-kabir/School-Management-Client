@@ -6,12 +6,12 @@ import {
 } from "react-icons/ai";
 import { MdNotifications, MdOutlineNotifications } from "react-icons/md";
 import useAuth from "../Hooks/useAuth";
-import { FaCircleUser, FaUser } from "react-icons/fa6";
+import { FaBars, FaCircleUser, FaUser } from "react-icons/fa6";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { BiLogOut } from "react-icons/bi";
 import { loadUsersData, usersData } from "../Hooks/userData";
 import { Link } from "react-router-dom";
-const Heading = ({ currentUserId }) => {
+const Heading = ({ currentUserId, toggleSidebar }) => {
   // console.log(currentUserId);
   const [localUsersData, setLocalUsersData] = useState([]);
   useEffect(() => {
@@ -34,15 +34,19 @@ const Heading = ({ currentUserId }) => {
     logOut();
   };
   return (
-    <div className="w-[75%] ml-auto z-auto">
+    <div className="md:w-[75%] w-[100%]  ml-auto z-50">
       <div
-        className="flex z-10 bg-[#10202B] fixed w-[75%] text-gray-100  items-center px-5 py-3 justify-between"
+        className="flex z-10 bg-[#10202B] fixed w-[100%] md:w-[75%] text-gray-100  items-center px-5 py-3 justify-between"
         style={{
           boxShadow:
             "rgba(0, 0, 0, 0.1) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.1) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
         }}
       >
-        <div className="flex gap-2 items-center ">
+        <button className="md:hidden pl-2 pr-2" onClick={toggleSidebar}>
+          <FaBars />
+        </button>
+
+        <div className="md:flex hidden gap-2 items-center ">
           <AiOutlineSearch className="w-7 h-7" color="#64748b" />
           <input
             type="text"
@@ -52,8 +56,8 @@ const Heading = ({ currentUserId }) => {
             placeholder="Type to search..."
           />
         </div>
-        <div className="flex items-center gap-4 space-x-5">
-          <MdOutlineNotifications className="w-6 h-6" color="#64748b" />
+        <div className="flex items-center gap-4 md:space-x-5 space-x-0">
+          <MdOutlineNotifications className="w-7 h-7" color="#64748b" />
           <AiOutlineMessage className="w-6 h-6" color="#64748b" />
           <div className="text-end">
             <h2 className="font-semibold">{matchedUser?.name}</h2>

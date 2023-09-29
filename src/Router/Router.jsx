@@ -28,6 +28,10 @@ const router = createBrowserRouter([
     errorElement:<ErrorPage />,
     children: [
       {
+        path:"/",
+        element:<Home />
+      },
+      {
         path: "/all-class",
         element: <AllClass />,
       },

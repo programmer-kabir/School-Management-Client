@@ -3,7 +3,6 @@ import Banner from '../../Component/Home/Banner/Banner';
 import Reviews from '../../Component/Home/Review/Reviews';
 import TopClass from '../../Component/Home/TopClass/TopClass';
 import Contact from '../../Component/Home/Contact/Contact';
-import NewsLetter from '../../Component/Home/NewsLetter/NewsLetter';
 import Faq from '../../Component/Home/Faq/Faq';
 import Benefit from '../../Component/Home/Benifit/Benifit';
 import AppDownload from '../../Component/Home/AppDownload/AppDownload';
@@ -20,6 +19,7 @@ const Home = () => {
             <Chose />
             <Reviews />
             <Contact />
+   
         </div>
     );
 };

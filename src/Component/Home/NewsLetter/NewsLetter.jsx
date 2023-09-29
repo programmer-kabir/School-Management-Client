@@ -4,7 +4,7 @@ const Newsletter = () => {
   const [email, setEmail] = useState("");
 
   return (
-    <div className={`flex bg-white p-1 rounded-lg`}>
+    <div className={`flex w-full bg-white p-1 rounded-lg`}>
       <input
         placeholder="Email address"
         type="email"

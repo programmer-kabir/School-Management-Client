@@ -3,7 +3,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import { ImHome } from "react-icons/im";
 import { GiTeacher } from "react-icons/gi";
 import Heading from "./Heading";
-import { FaCircleUser, FaUser } from "react-icons/fa6";
+import { FaArrowLeftLong, FaCircleUser, FaUser } from "react-icons/fa6";
 import { PiStudentFill } from "react-icons/pi";
 import useAdmin from "../Hooks/useAdmin";
 import { loadUsersData, usersData } from "../Hooks/userData";
@@ -18,6 +18,10 @@ const Sidebar = () => {
   const userEmail = user.email;
   const [localUsersData, setLocalUsersData] = useState([]);
   const [currentUserId, setCurrentUserId] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,31 +41,37 @@ const Sidebar = () => {
     }
   }, [localUsersData, userEmail]);
   // console.log(currentUserId);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const activeLinkClass =
     "bg-gradient-to-tr from-cyan-600 to-cyan-400 shadow-md shadow-cyan-500/20 hover:shadow-lg hover:shadow-cyan-500/40";
   return (
-    <div className="flex ">
-      <div className="bg-[#263238] w-1/4 h-screen fixed">
+    <div className="flex">
+      <div
+        className={`bg-[#263238] md:w-1/4 w-[70%] z-50 h-screen fixed md:block ${
+          isSidebarOpen ? "block" : "hidden"
+        }`}
+      >
         {/* Header */}
-        <div className="border-b border-white/20">
+        <div className="border-b border-white/20 flex md:block items-center justify-around">
           <Link to={"/"} className="pt-5">
             <img className="h-20 w-20 mx-auto" src={logo} alt="" />
           </Link>
+          <button className="md:hidden" onClick={toggleSidebar}>
+            <FaArrowLeftLong color="white" size={25}/>
+          </button>
         </div>
         {/* Left side Content */}
         <div className="px-5 pt-10 space-y-3">
-          {/* <NavLink
-            to="/dashboard"
-            className={({ isActive }) =>
-              `font-semibold transition-all disabled:opacity-50 hover:bg-gray-700 disabled:shadow-none disabled:pointer-events-none text-base py-3 rounded-lg  text-white active:opacity-[0.85] w-full flex items-center gap-4 px-5 capitalize ${
-                isActive ? activeLinkClass : ""
-              }`
-            }
-          >
-            <ImHome className="w-5 h-5" />
-            <span className="">Dashboard</span>
-          </NavLink> */}
-
           {isAdmin && (
             <>
               <NavLink
@@ -149,10 +159,10 @@ const Sidebar = () => {
           )}
         </div>
       </div>
-      <div className="flex-1">
+      <div className="md:flex-1">
         {/* Heading */}
-        <Heading currentUserId={currentUserId} />
-        <div className=" w-3/4 ml-auto">
+        <Heading currentUserId={currentUserId} toggleSidebar={toggleSidebar} />
+        <div className="md:w-3/4 w-full ml-auto">
           <Outlet />
         </div>
       </div>

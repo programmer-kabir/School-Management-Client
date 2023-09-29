@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import useAuth from "../../../../Component/Hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "../../../../Component/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUClass } from "../../../Redux/Class/ClassSlice";
+import toast from "react-hot-toast";
 
 const EnrolCourse = () => {
   const { user } = useAuth();
+
   const {
     refetch,
     data: enrolled = [],
@@ -47,6 +49,18 @@ const EnrolCourse = () => {
   if (isError) {
     return <div>Error loading enrolled courses.</div>;
   }
+// Copy Id
+const copyToClipboard = (transactionId) => {
+  navigator.clipboard.writeText(transactionId).then(() => {
+    // Notify the user with a toast that the copying was successful
+    toast.success("Transaction ID copied to clipboard!");
+  }, (err) => {
+    // Notify the user with a toast that there was an error
+    toast.error("Failed to copy transaction ID!");
+  });
+};
+
+
 
   return (
     <div className="pt-20">
@@ -64,7 +78,7 @@ const EnrolCourse = () => {
             </h2>
             {matchedData.map((classes) => (
               <div key={classes.classInfo._id}>
-                <div className="flex flex-col space-y-4 ">
+                <div className="flex flex-col space-y-4">
                   <ul className="flex flex-col divide-y divide-gray-700">
                     <li className="flex flex-col py-4 sm:flex-row sm:justify-between">
                       <div className="flex w-full space-x-2 sm:space-x-4">
@@ -76,27 +90,37 @@ const EnrolCourse = () => {
                         <div className="flex flex-col justify-between w-full pb-4">
                           <div className="flex justify-between w-full pb-2 space-x-2">
                             <div className="space-y-1">
-                              <h3 className="text-lg font-semibold leadi sm:pr-8">
+                              <h3 className="font-semibold  sm:pr-8">
                                 {classes?.classInfo.courseName}
                               </h3>
-                              <p className="text-sm dark:text-gray-400">
-                                {classes?.classInfo.instructorEmail}
+                              <button  onClick={() => copyToClipboard(classes.transactionId)} className="secondary-btn px-3 md:hidden">
+                                transaction
+                              </button>
+                              <p className="font-semibold hidden md:block">
+                                Price :{" "}
+                                <span className="font-normal">
+                                  $ {classes.classInfo.price}
+                                </span>
                               </p>
                             </div>
                             <div className="text-right">
-                              <p className="text-lg font-semibold">
-                                ${classes?.classInfo.price}
-                              </p>
-                              <p className="font-semibold">
+                              <button
+                                className="secondary-btn px-3 hidden md:block"
+                                onClick={() => copyToClipboard(classes.transactionId)}
+                              >
+                                transaction
+                              </button>
+                              {/* <p className="font-semibold">
                                 Transition Number :{" "}
                                 <span className="font-normal">
                                   {classes.transactionId}
                                 </span>
-                              </p>
+                              </p> */}
                             </div>
                           </div>
                         </div>
                       </div>
+                      
                     </li>
                   </ul>
                 </div>

@@ -6,15 +6,18 @@ import Content from "../../Content";
 const Benefit = () => {
   return (
     <Content>
-      <div className="bg-[#011E30] rounded-lg py-10 px-16 flex items-center justify-between">
+      <div className="bg-[#011E30] rounded-lg py-10 md:px-16 px-9 md:flex flex-row-reverse items-center justify-between">
         <div>
-          <button className="bg-cyan-500 px-5 py-2 rounded-full text-white">
+          <img src={imgEducation} className="lg:w-2/3 mx-auto" alt="" />
+        </div>
+        <div className="pt-5 md:pt-0">
+          <button className="bg-cyan-500 px-5 py-2 rounded-full  text-white">
             Benefit
           </button>
           <div className={`space-y-3 mt-3`}>
             <div className={`flex items-center space-x-2`}>
               <span
-                className={`inline-flex justify-center items-center w-10 h-10 bg-white rounded-full shadow-sm`}
+                className="inline-flex justify-center items-center w-10 h-10 bg-white rounded-full shadow-sm"
               >
                 <MdContentCopy size={20} />
               </span>
@@ -44,9 +47,6 @@ const Benefit = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div>
-          <img src={imgEducation} className="w-2/3 mx-auto" alt="" />
         </div>
       </div>
     </Content>

@@ -9,7 +9,7 @@ const AppDownload = () => {
         <section className={`bg-[#011E30] py-16 rounded-lg overflow-x-hidden`}>
       <div className="container">
         <div
-          className={`flex flex-col sm:flex-row space-y-5 sm:space-y-0 items-center justify-between max-w-4xl mx-auto`}
+          className={`flex flex-col sm:flex-row space-y-5 sm:space-y-0 items-center justify-between max-w-4xl mx-9 md:mx-auto`}
         >
           <figure data-aos="fade-right">
             <img src={imgAppDownload} alt="" className={`w-full max-w-xs`} />
